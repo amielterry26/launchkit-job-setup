@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LaunchKit — Professional job search setup. Resume tailoring, profile optimization, job board configuration, and application templates." />
+  <title>LaunchKit — Professional Job Search Setup</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Site stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner container">
+      <a href="#hero" class="nav-logo" aria-label="LaunchKit home">LaunchKit</a>
+
+      <div class="nav-links">
+        <a href="#features" class="nav-link">What's Included</a>
+        <a href="#packages" class="nav-link">Packages</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="nav-cta">Get Started</a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+
+    <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+      <a href="#features" class="nav-mobile-link">What's Included</a>
+      <a href="#packages" class="nav-mobile-link">Packages</a>
+      <a href="#faq" class="nav-mobile-link">FAQ</a>
+      <a href="#contact" class="nav-mobile-link nav-mobile-cta">Get Started</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="section section-hero" id="hero">
+    <div class="container">
+      <div class="hero-content reveal">
+        <span class="eyebrow">Job Search Setup</span>
+        <h1 class="hero-headline">
+          Get organized.<br />
+          Get applied.<br />
+          Get hired.
+        </h1>
+        <p class="hero-sub">
+          LaunchKit sets up your complete job-search system — tailored resumes,
+          polished profiles, job board configuration, and the templates you need
+          to apply consistently and efficiently.
+        </p>
+        <div class="hero-ctas">
+          <a href="#packages" class="btn btn-primary">View Packages</a>
+          <a href="#contact" class="btn btn-secondary">Get Started</a>
+        </div>
+      </div>
+
+      <div class="hero-chips reveal reveal-delay-1">
+        <div class="hero-chip">
+          <span class="hero-chip-label">Resume</span>
+          <span class="hero-chip-value">Tailored &amp; ready</span>
+        </div>
+        <div class="hero-chip">
+          <span class="hero-chip-label">Profiles</span>
+          <span class="hero-chip-value">Set up &amp; optimized</span>
+        </div>
+        <div class="hero-chip">
+          <span class="hero-chip-label">Job Alerts</span>
+          <span class="hero-chip-value">Configured &amp; running</span>
+        </div>
+        <div class="hero-chip">
+          <span class="hero-chip-label">Templates</span>
+          <span class="hero-chip-value">Polished &amp; reusable</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FEATURES / TABBED SHOWCASE
+       Three tabs. Left: CSS document/UI mockup. Right: content.
+       ============================================================ -->
+  <section class="section section-features" id="features">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="eyebrow">What's Included</span>
+        <h2>Everything you need, ready to use</h2>
+        <p class="section-sub">
+          From a blank slate to a complete, running job-search setup — we handle
+          the parts that take the most time and are easiest to get wrong.
+        </p>
+      </div>
+
+      <div class="tabs reveal reveal-delay-1" role="tablist" aria-label="Feature tabs">
+        <button
+          class="tab-btn active"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tab-panel-resume"
+          id="tab-btn-resume"
+          data-target="tab-panel-resume"
+        >Resume Setup</button>
+        <button
+          class="tab-btn"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-panel-collateral"
+          id="tab-btn-collateral"
+          data-target="tab-panel-collateral"
+        >Application Collateral</button>
+        <button
+          class="tab-btn"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-panel-profiles"
+          id="tab-btn-profiles"
+          data-target="tab-panel-profiles"
+        >Profile &amp; Job Board Setup</button>
+      </div>
+
+      <div class="tab-content reveal reveal-delay-2">
+
+        <!-- ── RESUME SETUP ─────────────────────────────────────── -->
+        <div class="tab-panel active" id="tab-panel-resume" role="tabpanel" aria-labelledby="tab-btn-resume">
+          <div class="tab-visual">
+            <div class="mock-window">
+              <div class="mock-window-bar">
+                <span class="mock-dot mock-dot-red"></span>
+                <span class="mock-dot mock-dot-yellow"></span>
+                <span class="mock-dot mock-dot-green"></span>
+                <span class="mock-url-bar"></span>
+              </div>
+              <div class="mock-resume">
+
+                <!-- Resume name + contact header -->
+                <div class="mock-resume-top">
+                  <div class="mock-r-name">Alex Morgan</div>
+                  <div class="mock-r-title">Senior Product Manager</div>
+                  <div class="mock-r-contact-row">
+                    <span class="mock-r-contact-item"></span>
+                    <span class="mock-r-contact-sep">·</span>
+                    <span class="mock-r-contact-item mock-r-contact-wide"></span>
+                    <span class="mock-r-contact-sep">·</span>
+                    <span class="mock-r-contact-item"></span>
+                  </div>
+                </div>
+
+                <div class="mock-divider"></div>
+
+                <!-- Experience section -->
+                <div class="mock-section">
+                  <div class="mock-section-label">EXPERIENCE</div>
+
+                  <!-- Job entry 1 -->
+                  <div class="mock-job-row">
+                    <div class="mock-job-title"></div>
+                    <div class="mock-job-date"></div>
+                  </div>
+                  <div class="mock-job-company"></div>
+                  <div class="mock-bullets">
+                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-line" style="width:90%"></div></div>
+                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-line" style="width:82%"></div></div>
+                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-line" style="width:87%"></div></div>
+                  </div>
+
+                  <!-- Job entry 2 -->
+                  <div class="mock-job-row" style="margin-top:10px">
+                    <div class="mock-job-title" style="width:52%"></div>
+                    <div class="mock-job-date"></div>
+                  </div>
+                  <div class="mock-job-company" style="width:40%"></div>
+                  <div class="mock-bullets">
+                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-line" style="width:85%"></div></div>
+                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-line" style="width:72%"></div></div>
+                  </div>
+                </div>
+
+                <div class="mock-divider"></div>
+
+                <!-- Education section -->
+                <div class="mock-section">
+                  <div class="mock-section-label">EDUCATION</div>
+                  <div class="mock-job-row">
+                    <div class="mock-job-title" style="width:58%"></div>
+                    <div class="mock-job-date"></div>
+                  </div>
+                  <div class="mock-line" style="width:45%; margin-top:4px"></div>
+                </div>
+
+                <div class="mock-divider"></div>
+
+                <!-- Skills section -->
+                <div class="mock-section" style="margin-bottom:0">
+                  <div class="mock-section-label">SKILLS</div>
+                  <div class="mock-pills">
+                    <span class="mock-pill" style="width:52px">Strategy</span>
+                    <span class="mock-pill" style="width:64px">Roadmapping</span>
+                    <span class="mock-pill" style="width:44px">Jira</span>
+                    <span class="mock-pill" style="width:58px">Stakeholders</span>
+                    <span class="mock-pill" style="width:46px">SQL</span>
+                    <span class="mock-pill" style="width:52px">Figma</span>
+                  </div>
+                </div>
+
+              </div><!-- /mock-resume -->
+            </div><!-- /mock-window -->
+          </div><!-- /tab-visual -->
+
+          <div class="tab-body">
+            <h3>Resumes that are ready to deploy</h3>
+            <p>
+              Your resume gets cleaned up, properly formatted, and tailored to
+              your target roles. Whether you're starting from scratch or
+              refining an existing draft, we get it into a shape that's clear,
+              ATS-friendly, and easy to customize for individual applications.
+            </p>
+            <ul class="feature-list">
+              <li>Full formatting and structure cleanup</li>
+              <li>ATS-compatible layout and keyword alignment</li>
+              <li>Tailored versions for specific role types</li>
+              <li>Summary and bullet points refined for clarity</li>
+              <li>Delivered in PDF and editable formats</li>
+            </ul>
+          </div>
+        </div><!-- /resume -->
+
+
+        <!-- ── APPLICATION COLLATERAL ────────────────────────────── -->
+        <div class="tab-panel" id="tab-panel-collateral" role="tabpanel" aria-labelledby="tab-btn-collateral" hidden>
+          <div class="tab-visual">
+            <div class="mock-window">
+              <div class="mock-window-bar">
+                <span class="mock-dot mock-dot-red"></span>
+                <span class="mock-dot mock-dot-yellow"></span>
+                <span class="mock-dot mock-dot-green"></span>
+                <span class="mock-url-bar"></span>
+              </div>
+
+              <!-- Two stacked document previews inside the window -->
+              <div class="mock-doc-stack">
+
+                <!-- Cover Letter -->
+                <div class="mock-doc-card">
+                  <div class="mock-doc-card-label">
+                    <span class="mock-doc-card-dot"></span>
+                    Cover Letter Template
+                  </div>
+                  <div class="mock-doc-name"></div>
+                  <div class="mock-doc-contact-line"></div>
+                  <div class="mock-doc-sep"></div>
+                  <div class="mock-doc-greeting"></div>
+                  <div class="mock-doc-body">
+                    <div class="mock-line" style="width:100%"></div>
+                    <div class="mock-line" style="width:96%"></div>
+                    <div class="mock-line" style="width:90%"></div>
+                    <div class="mock-line" style="width:98%"></div>
+                    <div class="mock-line" style="width:46%"></div>
+                  </div>
+                  <div class="mock-doc-body" style="margin-top:10px">
+                    <div class="mock-line" style="width:100%"></div>
+                    <div class="mock-line" style="width:84%"></div>
+                    <div class="mock-line" style="width:38%"></div>
+                  </div>
+                  <div class="mock-doc-signoff">
+                    <div class="mock-line" style="width:48px"></div>
+                    <div class="mock-line" style="width:74px; margin-top:4px"></div>
+                  </div>
+                </div><!-- /cover letter -->
+
+                <!-- References -->
+                <div class="mock-doc-card mock-doc-card-refs">
+                  <div class="mock-doc-card-label">
+                    <span class="mock-doc-card-dot mock-doc-card-dot-refs"></span>
+                    References Document
+                  </div>
+                  <!-- Three reference entries -->
+                  <div class="mock-ref-entry">
+                    <div class="mock-ref-name"></div>
+                    <div class="mock-line" style="width:70%; height:8px; margin-top:4px"></div>
+                    <div class="mock-line" style="width:55%; height:8px; margin-top:3px"></div>
+                  </div>
+                  <div class="mock-ref-entry">
+                    <div class="mock-ref-name" style="width:52%"></div>
+                    <div class="mock-line" style="width:65%; height:8px; margin-top:4px"></div>
+                    <div class="mock-line" style="width:48%; height:8px; margin-top:3px"></div>
+                  </div>
+                  <div class="mock-ref-entry" style="margin-bottom:0">
+                    <div class="mock-ref-name" style="width:62%"></div>
+                    <div class="mock-line" style="width:60%; height:8px; margin-top:4px"></div>
+                    <div class="mock-line" style="width:44%; height:8px; margin-top:3px"></div>
+                  </div>
+                </div><!-- /references -->
+
+              </div><!-- /mock-doc-stack -->
+            </div><!-- /mock-window -->
+          </div><!-- /tab-visual -->
+
+          <div class="tab-body">
+            <h3>Templates for every application</h3>
+            <p>
+              A polished cover letter template and professional references
+              document means you can move quickly without starting from scratch
+              each time. We create clean, reusable templates you can adapt to
+              any role in minutes.
+            </p>
+            <ul class="feature-list">
+              <li>Professionally structured cover letter template</li>
+              <li>References document formatted and ready</li>
+              <li>Consistent tone across all materials</li>
+              <li>Designed to be quickly customized per application</li>
+              <li>Delivered in editable and PDF formats</li>
+            </ul>
+          </div>
+        </div><!-- /collateral -->
+
+
+        <!-- ── PROFILE & JOB BOARD ───────────────────────────────── -->
+        <div class="tab-panel" id="tab-panel-profiles" role="tabpanel" aria-labelledby="tab-btn-profiles" hidden>
+          <div class="tab-visual">
+            <div class="mock-window">
+              <div class="mock-window-bar">
+                <span class="mock-dot mock-dot-red"></span>
+                <span class="mock-dot mock-dot-yellow"></span>
+                <span class="mock-dot mock-dot-green"></span>
+                <span class="mock-url-bar"></span>
+              </div>
+
+              <div class="mock-profiles-wrap">
+                <!-- Profile header -->
+                <div class="mock-profile-header">
+                  <div class="mock-avatar mock-avatar-lg"></div>
+                  <div class="mock-header-lines">
+                    <div class="mock-line mock-name-line"></div>
+                    <div class="mock-line mock-title-line"></div>
+                    <div class="mock-line mock-contact-line"></div>
+                  </div>
+                  <div class="mock-profile-status">
+                    <span class="mock-status-dot"></span>
+                    Active
+                  </div>
+                </div>
+
+                <div class="mock-divider"></div>
+
+                <div class="mock-platform-section-label">Platforms Configured</div>
+
+                <!-- 2×2 platform cards grid -->
+                <div class="mock-platforms-grid">
+
+                  <div class="mock-pcard">
+                    <div class="mock-pcard-header">
+                      <!-- LinkedIn blue -->
+                      <span class="mock-pcard-dot" style="background:#0077B5"></span>
+                      <span class="mock-pcard-name">LinkedIn</span>
+                      <span class="mock-pcard-check">✓</span>
+                    </div>
+                    <div class="mock-pcard-stat">Headline optimized</div>
+                    <div class="mock-pcard-stat">Alerts active</div>
+                  </div>
+
+                  <div class="mock-pcard">
+                    <div class="mock-pcard-header">
+                      <!-- Indeed dark blue -->
+                      <span class="mock-pcard-dot" style="background:#2164F3"></span>
+                      <span class="mock-pcard-name">Indeed</span>
+                      <span class="mock-pcard-check">✓</span>
+                    </div>
+                    <div class="mock-pcard-stat">Resume uploaded</div>
+                    <div class="mock-pcard-stat">Alerts active</div>
+                  </div>
+
+                  <div class="mock-pcard">
+                    <div class="mock-pcard-header">
+                      <!-- Glassdoor green -->
+                      <span class="mock-pcard-dot" style="background:#0CAA41"></span>
+                      <span class="mock-pcard-name">Glassdoor</span>
+                      <span class="mock-pcard-check">✓</span>
+                    </div>
+                    <div class="mock-pcard-stat">Profile complete</div>
+                    <div class="mock-pcard-stat">Visible to employers</div>
+                  </div>
+
+                  <div class="mock-pcard">
+                    <div class="mock-pcard-header">
+                      <!-- ZipRecruiter blue-purple -->
+                      <span class="mock-pcard-dot" style="background:#4A90D9"></span>
+                      <span class="mock-pcard-name">ZipRecruiter</span>
+                      <span class="mock-pcard-check">✓</span>
+                    </div>
+                    <div class="mock-pcard-stat">Resume synced</div>
+                    <div class="mock-pcard-stat">Matching active</div>
+                  </div>
+
+                </div><!-- /mock-platforms-grid -->
+              </div><!-- /mock-profiles-wrap -->
+            </div><!-- /mock-window -->
+          </div><!-- /tab-visual -->
+
+          <div class="tab-body">
+            <h3>Profiles set up and job alerts running</h3>
+            <p>
+              We optimize your LinkedIn profile and configure your presence on
+              the key job boards — with settings tuned, accurate information
+              filled in, and job alerts running so relevant roles come to you
+              instead of the other way around.
+            </p>
+            <ul class="feature-list">
+              <li>LinkedIn profile setup and headline optimization</li>
+              <li>Indeed, Glassdoor, and ZipRecruiter configured</li>
+              <li>Custom job alerts set by role type and location</li>
+              <li>Email routing and application tracking guidance</li>
+              <li>Search strategy and job tracking template included</li>
+            </ul>
+          </div>
+        </div><!-- /profiles -->
+
+      </div><!-- /tab-content -->
+    </div><!-- /container -->
+  </section>
+
+
+  <!-- ============================================================
+       PACKAGES / PRICING  — unchanged layout
+       ============================================================ -->
+  <section class="section section-packages" id="packages">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2>Simple, flat-rate packages</h2>
+        <p class="section-sub">
+          No hourly billing, no hidden fees. Pick the package that fits where
+          you are in your search and what level of support you need.
+        </p>
+      </div>
+
+      <div class="packages-grid reveal reveal-delay-1">
+
+        <!-- LIGHT -->
+        <div class="package-card">
+          <div class="package-header">
+            <span class="package-tier">Light</span>
+            <div class="package-price">
+              <span class="package-currency">$</span>
+              <span class="package-amount">99</span>
+            </div>
+            <p class="package-desc">
+              Get the basics done cleanly — your resume tidied up and your
+              search set in motion.
+            </p>
+          </div>
+          <ul class="package-features">
+            <li>1 resume review and cleanup</li>
+            <li>Basic LinkedIn profile polish</li>
+            <li>Up to 2 job board accounts configured</li>
+            <li>Starter job alert setup</li>
+          </ul>
+          <div class="package-footer">
+            <a href="#contact" class="btn btn-outline package-btn" data-package="Light">Get Started</a>
+          </div>
+        </div>
+
+        <!-- FULL (featured) -->
+        <div class="package-card package-card-featured">
+          <div class="package-badge">Most Popular</div>
+          <div class="package-header">
+            <span class="package-tier">Full</span>
+            <div class="package-price">
+              <span class="package-currency">$</span>
+              <span class="package-amount">249</span>
+            </div>
+            <p class="package-desc">
+              A complete, organized system — everything you need to run a
+              focused, efficient job search.
+            </p>
+          </div>
+          <ul class="package-features">
+            <li>2–3 tailored resume versions</li>
+            <li>Full LinkedIn profile setup and optimization</li>
+            <li>4 major job board profiles configured</li>
+            <li>Custom job alerts and email routing</li>
+            <li>Cover letter template + references document</li>
+            <li>Strategy notes for applying and following up</li>
+            <li>Job tracking template included</li>
+          </ul>
+          <div class="package-footer">
+            <a href="#contact" class="btn btn-primary package-btn" data-package="Full">Get Started</a>
+          </div>
+        </div>
+
+        <!-- ULTIMATE -->
+        <div class="package-card">
+          <div class="package-header">
+            <span class="package-tier">Ultimate</span>
+            <div class="package-price">
+              <span class="package-currency">$</span>
+              <span class="package-amount">349</span>
+            </div>
+            <p class="package-desc">
+              Everything in Full, with more targeted support for serious
+              candidates who want priority attention.
+            </p>
+          </div>
+          <ul class="package-features">
+            <li>Everything in Full</li>
+            <li>Up to 5 tailored resume versions</li>
+            <li>Additional job board profiles</li>
+            <li>Targeted company and role research</li>
+            <li>Priority revision rounds</li>
+            <li>One 30-minute strategy call included</li>
+          </ul>
+          <div class="package-footer">
+            <a href="#contact" class="btn btn-outline package-btn" data-package="Ultimate">Get Started</a>
+          </div>
+        </div>
+
+        <!-- CONSULT -->
+        <div class="package-card package-card-consult">
+          <div class="package-header">
+            <span class="package-tier">Consult</span>
+            <div class="package-price">
+              <span class="package-currency">$</span>
+              <span class="package-amount">49</span>
+            </div>
+            <p class="package-desc">
+              A focused one-on-one session for direction, review, and a clear
+              plan before you invest further.
+            </p>
+          </div>
+          <ul class="package-features">
+            <li>30–45 minute one-on-one session</li>
+            <li>Resume and profile review</li>
+            <li>Search strategy and direction</li>
+            <li>Notes and next steps provided after</li>
+          </ul>
+          <div class="package-footer">
+            <a href="#contact" class="btn btn-outline package-btn" data-package="Consult">Book a Consult</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PROCESS — unchanged
+       ============================================================ -->
+  <section class="section section-process" id="process">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2>Simple from start to finish</h2>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="process-num">01</div>
+          <div class="process-content">
+            <h3>Fill out the intake form</h3>
+            <p>
+              Share your current materials, target roles, locations, and any
+              restrictions or notes. Takes about two minutes.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-connector" aria-hidden="true"></div>
+
+        <div class="process-step reveal reveal-delay-1">
+          <div class="process-num">02</div>
+          <div class="process-content">
+            <h3>We build your setup</h3>
+            <p>
+              Based on your intake, we work on your resume, profiles, templates,
+              and job board configuration. We follow up if anything needs
+              clarification.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-connector" aria-hidden="true"></div>
+
+        <div class="process-step reveal reveal-delay-2">
+          <div class="process-num">03</div>
+          <div class="process-content">
+            <h3>Start applying with a cleaner system</h3>
+            <p>
+              You receive your complete setup — organized, polished, and ready
+              to use. Everything in one place, ready to go.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOUNDER VIDEO
+       Subtle "why I built this" section with a video embed slot.
+
+       TO ADD YOUR VIDEO:
+       1. Remove or hide the .video-placeholder div
+       2. Uncomment one of the <iframe> blocks below
+       3. Replace YOUR_VIDEO_ID with your YouTube or Vimeo ID
+       ============================================================ -->
+  <section class="section section-video" id="story">
+    <div class="container">
+      <div class="video-layout reveal">
+
+        <!-- Left: brief personal context -->
+        <div class="video-text">
+          <span class="eyebrow">The Story</span>
+          <h2>Why I built this</h2>
+          <p>
+            Most people don't struggle with applying — they struggle with getting
+            set up to apply well. The resume isn't ready, the profile is
+            outdated, the job boards aren't configured. This service exists to
+            solve that specific problem, cleanly and efficiently.
+          </p>
+          <p>
+            I built LaunchKit because the setup work is something I genuinely
+            enjoy, and it's something most job seekers skip or rush. Done
+            properly, it makes everything downstream easier.
+          </p>
+        </div>
+
+        <!-- Right: video embed -->
+        <div class="video-embed-wrap">
+
+          <!--
+            ── YOUTUBE EMBED ──────────────────────────────────────
+            Uncomment and replace YOUR_VIDEO_ID:
+
+            <iframe
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0"
+              title="Why I built LaunchKit"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+
+            ── VIMEO EMBED ────────────────────────────────────────
+            Uncomment and replace YOUR_VIDEO_ID:
+
+            <iframe
+              src="https://player.vimeo.com/video/YOUR_VIDEO_ID?title=0&byline=0"
+              title="Why I built LaunchKit"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          -->
+
+          <!-- Placeholder shown until a real video is added -->
+          <div class="video-placeholder">
+            <div class="video-play-btn" aria-hidden="true">▶</div>
+            <p class="video-placeholder-label">Short intro — coming soon</p>
+          </div>
+
+        </div><!-- /video-embed-wrap -->
+      </div><!-- /video-layout -->
+    </div><!-- /container -->
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT / INTAKE FORM
+       ──────────────────────────────────────────────────────────────
+       FORMSPREE SETUP:
+       1. Go to https://formspree.io and create a free account
+       2. Create a new form — you'll receive a Form ID (e.g. "xkgnopqr")
+       3. In js/main.js, find FORMSPREE_ENDPOINT and replace
+          'YOUR_FORM_ID' with your actual ID
+       4. The form action below is the no-JavaScript fallback —
+          update it with the same endpoint
+       ──────────────────────────────────────────────────────────────
+       NOTE ON FILE UPLOAD:
+       File uploads require Formspree's paid plan. On the free plan,
+       the resume upload field will be ignored. To work around this,
+       consider asking clients to share a Google Drive link in the
+       notes field instead, and remove the file input from the form.
+       ============================================================ -->
+  <section class="section section-contact" id="contact">
+    <div class="container">
+      <div class="contact-layout">
+
+        <div class="contact-intro reveal">
+          <span class="eyebrow">Get Started</span>
+          <h2>Tell us about your search</h2>
+          <p>
+            Fill out the form below and we'll follow up within one business day
+            to confirm your package and next steps.
+          </p>
+          <div class="contact-notes">
+            <div class="contact-note">
+              <span class="contact-note-icon">✦</span>
+              <span>No calls required to get started</span>
+            </div>
+            <div class="contact-note">
+              <span class="contact-note-icon">✦</span>
+              <span>Resume upload is optional — we can work with what you have</span>
+            </div>
+            <div class="contact-note">
+              <span class="contact-note-icon">✦</span>
+              <span>All package levels welcome, including Not Sure</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal reveal-delay-1">
+
+          <!--
+            Form action is the no-JS Formspree fallback.
+            Update 'YOUR_FORM_ID' here AND in js/main.js.
+          -->
+          <form
+            class="intake-form"
+            id="intake-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            enctype="multipart/form-data"
+            novalidate
+          >
+            <!-- Formspree email subject line -->
+            <input type="hidden" name="_subject" value="New LaunchKit Intake Submission" />
+
+            <!-- Name + Email -->
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="f-name">
+                  Name <span class="form-required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="f-name"
+                  name="name"
+                  placeholder="Your full name"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-email">
+                  Email <span class="form-required" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="f-email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+
+            <!-- Has resume + upload -->
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="f-has-resume">Do you have a resume?</label>
+                <select class="form-input form-select" id="f-has-resume" name="has_resume">
+                  <option value="">Select…</option>
+                  <option value="yes">Yes, I have one</option>
+                  <option value="needs-work">Yes, but it needs work</option>
+                  <option value="no">No, starting from scratch</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-resume-upload">
+                  Resume upload <span class="form-optional">(optional)</span>
+                </label>
+                <label class="form-file-label" for="f-resume-upload">
+                  <span class="form-file-icon">↑</span>
+                  <span class="form-file-text" id="form-file-text">Choose file…</span>
+                  <input
+                    class="form-file-input"
+                    type="file"
+                    id="f-resume-upload"
+                    name="resume"
+                    accept=".pdf,.doc,.docx"
+                  />
+                </label>
+                <span class="form-hint">PDF, DOC, or DOCX</span>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label class="form-label" for="f-has-linkedin">Do you have a LinkedIn?</label>
+                <select class="form-input form-select" id="f-has-linkedin" name="has_linkedin">
+                  <option value="">Select…</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="incomplete">Yes, but it's incomplete</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-linkedin-url">
+                  LinkedIn URL <span class="form-optional">(if you have one)</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="url"
+                  id="f-linkedin-url"
+                  name="linkedin_url"
+                  placeholder="linkedin.com/in/yourprofile"
+                />
+              </div>
+            </div>
+
+            <!-- Package -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="f-package">Package of interest</label>
+                <select class="form-input form-select" id="f-package" name="package">
+                  <option value="">Select a package…</option>
+                  <option value="light">Light — $99</option>
+                  <option value="full">Full — $249</option>
+                  <option value="ultimate">Ultimate — $349</option>
+                  <option value="consult">Consult — $49</option>
+                  <option value="unsure">Not sure yet</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="f-message">
+                  Anything else we should know <span class="form-optional">(optional)</span>
+                </label>
+                <textarea
+                  class="form-input form-textarea"
+                  id="f-message"
+                  name="message"
+                  rows="4"
+                  placeholder="Share your target roles, preferred locations, timeline, availability, and anything else helpful."
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-row form-row-submit">
+              <button type="submit" class="btn btn-primary btn-submit" id="form-submit-btn">
+                Submit Intake Form
+              </button>
+              <p class="form-note">
+                We'll follow up at the email provided, typically within one business day.
+              </p>
+            </div>
+
+          </form>
+
+          <!-- Success state -->
+          <div class="form-success" id="form-success" hidden aria-live="polite">
+            <div class="form-success-icon">✓</div>
+            <h3>Got it — we'll be in touch.</h3>
+            <p>
+              Your intake has been received. Expect a follow-up at the email
+              you provided within one business day.
+            </p>
+          </div>
+
+        </div><!-- /contact-form-wrap -->
+      </div><!-- /contact-layout -->
+    </div><!-- /container -->
+  </section>
+
+
+  <!-- ============================================================
+       FAQ — card-style containers (CSS upgrade from v1)
+       ============================================================ -->
+  <section class="section section-faq" id="faq">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Common questions</h2>
+      </div>
+
+      <div class="faq-list reveal reveal-delay-1">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Who is this for?
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              This is for people who are actively job searching or preparing to
+              start — whether you're early in your career, switching industries,
+              re-entering after time off, or just looking for a cleaner, more
+              organized approach. It's also useful for anyone who knows they need
+              to apply but keeps putting it off because the setup feels
+              overwhelming.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can you work with my existing resume?
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes. Most clients have something to work with. We'll clean it up,
+              reformat it, and tailor it to the roles you're targeting. If you
+              don't have one, we'll build it from scratch using information you
+              provide in the intake form.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do I have to book a consultation call?
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              No. Consultation calls are entirely optional and available as a
+              separate $49 add-on. Most clients complete their setup through the
+              intake form alone, without any calls. If you want direct,
+              one-on-one guidance before or during the process, the consult
+              option is there for that.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What platforms are covered?
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              The core platforms are LinkedIn, Indeed, Glassdoor, and
+              ZipRecruiter. Additional platforms can be requested — just note
+              them in the intake form. The number of platforms included depends
+              on the package selected.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Does this include interview prep?
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              The Full and Ultimate packages include strategy notes covering how
+              to approach applications, write effective follow-ups, and handle
+              early conversations. Deep interview coaching and mock interviews
+              are a separate engagement and not part of the current packages.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How long does it take?
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Work is generally completed within a few business days of receiving
+              your completed intake. Timing can vary depending on the package
+              complexity and current availability. If your timeline is urgent,
+              mention it in the notes field and we'll do our best to accommodate.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-logo">LaunchKit</span>
+          <span class="footer-tagline">Practical job search setup for people who are ready to apply.</span>
+        </div>
+        <div class="footer-right">
+          <a href="mailto:hello@launchkit.co" class="footer-link">hello@launchkit.co</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 LaunchKit. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
