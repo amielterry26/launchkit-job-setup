@@ -1,6 +1,6 @@
 /* =============================================================
    LaunchKit — styles.css  (branch: light)
-   Color direction: clean white/cool-gray + deep navy
+   Color direction: clean white/cool-gray + modern cobalt blue
    Professional services palette — reads "career-ready" instantly
    ============================================================= */
 
@@ -14,13 +14,12 @@
  * different use case. A job-search service needs to feel sharp,
  * ready, and professional at first glance.
  *
- * This palette: white/cool-light-gray + deep navy accent.
+ * This palette: white/cool-light-gray + modern cobalt accent.
  *
- * Deep navy (#1B3B6F range) is the color of a pressed suit,
- * a strong cover letter, a clean LinkedIn profile photo.
- * People unconsciously associate it with career, expertise,
- * and competence. It's used by LinkedIn, top-tier law firms,
- * consulting practices, and serious professional services.
+ * Cobalt blue (#2457D4) sits in the "confident and capable" zone
+ * without tipping into the flat, dead feel of classic dark navy.
+ * It's energetic enough to signal "modern product" while still
+ * reading professional and trustworthy on a services site.
  *
  * Cool light gray background keeps it from feeling like every
  * generic corporate site. The off-white with a blue undertone
@@ -44,14 +43,14 @@
   --color-text-secondary: #5A6478;   /* cool medium gray */
   --color-text-tertiary:  #9AA3B2;   /* lighter cool gray */
 
-  /* ── Accent: deep navy ──────────────────────────────────── */
-  --color-accent:         #1B3B6F;   /* deep navy — the core brand color */
-  --color-accent-hover:   #132D56;   /* darker on hover */
-  --color-accent-light:   #E8EEF8;   /* very light navy tint for backgrounds */
-  --color-accent-text:    #0F2447;   /* darkest navy for text on light tint */
+  /* ── Accent: modern cobalt ──────────────────────────────── */
+  --color-accent:         #2457D4;   /* cobalt blue — confident, modern, not flat navy */
+  --color-accent-hover:   #1A45BE;   /* darker on hover */
+  --color-accent-light:   #EBF0FD;   /* very light cobalt tint for backgrounds */
+  --color-accent-text:    #1534A0;   /* darkest cobalt for text on light tint */
 
-  /* ── Secondary accent: clear mid-blue for links/highlights  */
-  --color-accent-mid:     #2563EB;   /* brighter blue for interactive / highlight moments */
+  /* ── Secondary accent: bright blue for links/highlights ─── */
+  --color-accent-mid:     #4F81F0;   /* lighter blue for interactive / highlight moments */
 
   /* ── Borders & shadows ──────────────────────────────────── */
   --color-border:         #D8DDE8;   /* cool light border */
@@ -241,11 +240,11 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 .btn-primary {
   background-color: var(--color-accent);
   color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(27,59,111,0.28);
+  box-shadow: 0 2px 8px rgba(36,87,212,0.28);
 }
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
-  box-shadow: 0 4px 16px rgba(27,59,111,0.32);
+  box-shadow: 0 4px 16px rgba(36,87,212,0.32);
 }
 
 /* Secondary — ghost */
@@ -330,7 +329,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 .nav-cta:hover {
   background-color: var(--color-accent-hover);
-  box-shadow: 0 2px 8px rgba(27,59,111,0.25);
+  box-shadow: 0 2px 8px rgba(36,87,212,0.25);
 }
 
 /* Mobile hamburger */
@@ -389,7 +388,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   text-align: center;
   /* Subtle radial gradient from center — gives the hero depth */
   background: radial-gradient(ellipse 80% 60% at 50% -10%,
-    rgba(27, 59, 111, 0.06) 0%,
+    rgba(36, 87, 212, 0.06) 0%,
     transparent 70%
   ), var(--color-bg);
 }
@@ -726,7 +725,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   color: var(--color-accent);
   letter-spacing: 0.02em;
   white-space: nowrap;
-  border: 1px solid rgba(27,59,111,0.12);
+  border: 1px solid rgba(36,87,212,0.12);
 }
 
 /* ── COLLATERAL mockup ─────────────────────────────────────── */
@@ -874,7 +873,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   background-color: var(--color-accent-light);
   padding: 3px 8px;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(27,59,111,0.12);
+  border: 1px solid rgba(36,87,212,0.12);
   margin-left: auto;
   flex-shrink: 0;
 }
@@ -1337,7 +1336,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 .form-input:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(27,59,111,0.10);
+  box-shadow: 0 0 0 3px rgba(36,87,212,0.10);
 }
 
 .form-select {

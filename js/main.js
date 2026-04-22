@@ -25,7 +25,6 @@ function init() {
   initFAQ();
   initReveal();
   initForm();
-  initFileInput();
   initSmoothScroll();
   initPackageButtons();
 }

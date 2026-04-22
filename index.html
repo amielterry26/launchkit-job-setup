@@ -718,7 +718,7 @@
             </div>
             <div class="contact-note">
               <span class="contact-note-icon">✦</span>
-              <span>Resume upload is optional — we can work with what you have</span>
+              <span>Share a Google Drive link in the notes if you have a resume ready</span>
             </div>
             <div class="contact-note">
               <span class="contact-note-icon">✦</span>
@@ -738,7 +738,6 @@
             id="intake-form"
             action="https://formspree.io/f/xyklnlod"
             method="POST"
-            enctype="multipart/form-data"
             novalidate
           >
             <!-- Formspree email subject line -->
@@ -776,8 +775,8 @@
               </div>
             </div>
 
-            <!-- Has resume + upload -->
-            <div class="form-row form-row-2">
+            <!-- Has resume -->
+            <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="f-has-resume">Do you have a resume?</label>
                 <select class="form-input form-select" id="f-has-resume" name="has_resume">
@@ -786,23 +785,6 @@
                   <option value="needs-work">Yes, but it needs work</option>
                   <option value="no">No, starting from scratch</option>
                 </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="f-resume-upload">
-                  Resume upload <span class="form-optional">(optional)</span>
-                </label>
-                <label class="form-file-label" for="f-resume-upload">
-                  <span class="form-file-icon">↑</span>
-                  <span class="form-file-text" id="form-file-text">Choose file…</span>
-                  <input
-                    class="form-file-input"
-                    type="file"
-                    id="f-resume-upload"
-                    name="resume"
-                    accept=".pdf,.doc,.docx"
-                  />
-                </label>
-                <span class="form-hint">PDF, DOC, or DOCX</span>
               </div>
             </div>
 
