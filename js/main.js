@@ -28,6 +28,7 @@ function init() {
   initFileInput();
   initSmoothScroll();
   initPackageButtons();
+  initSubmitSuccess();
 }
 
 
@@ -227,16 +228,13 @@ function initReveal() {
    Replace the submitForm function body with your fetch() call.
    ============================================================= */
 function initForm() {
-  const form        = document.getElementById('intake-form');
-  const submitBtn   = document.getElementById('form-submit-btn');
-  const successEl   = document.getElementById('form-success');
+  const form      = document.getElementById('intake-form');
+  const submitBtn = document.getElementById('form-submit-btn');
 
   if (!form) return;
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // Basic client-side validation
+  form.addEventListener('submit', (e) => {
+    // Client-side validation — prevent submit if invalid
     const requiredFields = form.querySelectorAll('[required]');
     let isValid = true;
 
@@ -252,7 +250,7 @@ function initForm() {
     });
 
     if (!isValid) {
-      // Scroll to first error
+      e.preventDefault();
       const firstError = form.querySelector('.form-field-error');
       if (firstError) {
         firstError.previousElementSibling?.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -260,75 +258,32 @@ function initForm() {
       return;
     }
 
-    // Loading state
+    // Show loading state — form submits natively to Formsubmit (supports file uploads)
     submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
-
-    try {
-      await submitForm(form);
-
-      // Show success state
-      form.style.display    = 'none';
-      successEl.hidden      = false;
-
-      // Scroll to success message
-      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-    } catch (err) {
-      console.error('Form submission error:', err);
-      submitBtn.textContent = 'Submit Intake Form';
-      submitBtn.disabled    = false;
-      showGlobalError(form, 'Something went wrong. Please try again or send an email directly.');
-    }
   });
 }
 
-/**
- * submitForm — Formspree integration.
- *
- * SETUP INSTRUCTIONS (takes about 2 minutes):
- * 1. Create a free account at https://formspree.io
- * 2. Click "New Form" — give it a name like "LaunchKit Intake"
- * 3. Formspree gives you a Form ID that looks like: xkgnopqr
- * 4. Replace 'YOUR_FORM_ID' in FORMSPREE_ENDPOINT below
- * 5. Also update the form's action attribute in index.html
- *    (search for: action="https://formspree.io/f/YOUR_FORM_ID")
- * 6. Every submission will be emailed to your Formspree account email
- *
- * NOTE ON FILE UPLOADS:
- * File upload support requires Formspree's paid plan (Gold).
- * On the free plan the resume file field is silently ignored.
- * Workaround: ask clients to paste a Google Drive share link
- * in the notes textarea instead, and optionally remove the
- * file input from the form.
- *
- * ALTERNATIVE BACKENDS:
- * Basin (usebasin.com), Netlify Forms, EmailJS, or your own
- * endpoint all work — just swap the fetch() call below.
+/*
+ * initSubmitSuccess — detects the ?submitted=1 redirect from Formsubmit
+ * and shows the success state without a full page reload experience.
+ * Formsubmit redirects back here after a native POST (required for file uploads).
  */
-async function submitForm(form) {
-  // ================================================================
-  // REPLACE 'YOUR_FORM_ID' with your actual Formspree Form ID.
-  // Example: 'https://formspree.io/f/xkgnopqr'
-  // ================================================================
-  const FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/amielterry.dev@gmail.com';
+function initSubmitSuccess() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('submitted') !== '1') return;
 
-  const res = await fetch(FORMSUBMIT_ENDPOINT, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  });
+  const form      = document.getElementById('intake-form');
+  const successEl = document.getElementById('form-success');
 
-  if (!res.ok) {
-    let errorMsg = 'Submission failed. Please try again.';
-    try {
-      const data = await res.json();
-      if (data.errors && data.errors.length) {
-        errorMsg = data.errors.map(e => e.message).join(', ');
-      }
-    } catch (_) { /* ignore JSON parse failures */ }
-    throw new Error(errorMsg);
+  if (form && successEl) {
+    form.style.display = 'none';
+    successEl.hidden   = false;
+    successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
+
+  // Clean the URL
+  history.replaceState(null, '', window.location.pathname + '#contact');
 }
 
 /** Show an error message below a field */
