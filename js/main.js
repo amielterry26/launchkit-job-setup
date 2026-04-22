@@ -25,6 +25,7 @@ function init() {
   initFAQ();
   initReveal();
   initForm();
+  initFileInput();
   initSmoothScroll();
   initPackageButtons();
 }
@@ -310,9 +311,9 @@ async function submitForm(form) {
   // REPLACE 'YOUR_FORM_ID' with your actual Formspree Form ID.
   // Example: 'https://formspree.io/f/xkgnopqr'
   // ================================================================
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xyklnlod';
+  const FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/amielterry.dev@gmail.com';
 
-  const res = await fetch(FORMSPREE_ENDPOINT, {
+  const res = await fetch(FORMSUBMIT_ENDPOINT, {
     method: 'POST',
     body: new FormData(form),
     headers: { 'Accept': 'application/json' }
