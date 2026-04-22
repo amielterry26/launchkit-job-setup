@@ -311,7 +311,7 @@ async function submitForm(form) {
   // REPLACE 'YOUR_FORM_ID' with your actual Formspree Form ID.
   // Example: 'https://formspree.io/f/xkgnopqr'
   // ================================================================
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xyklnlod';
 
   const res = await fetch(FORMSPREE_ENDPOINT, {
     method: 'POST',
