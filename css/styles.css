@@ -1,32 +1,27 @@
 /* =============================================================
    LaunchKit — styles.css  (branch: light)
-   Color direction: clean white/cool-gray + modern cobalt blue
+   Color direction: warm linen base + cobalt accent + selective gradient moments
    Professional services palette — reads "career-ready" instantly
    ============================================================= */
 
 
 /*
  * ─────────────────────────────────────────────────────────────
- * WHY THIS PALETTE (branch: light)
+ * WHY THIS PALETTE
  * ─────────────────────────────────────────────────────────────
- * The tan/cream palette from main reads "zen wellness finance."
- * Beautiful — but it borrows its emotional language from a
- * different use case. A job-search service needs to feel sharp,
- * ready, and professional at first glance.
+ * Hybrid approach: warm sand/linen base (personal, human) with
+ * cobalt blue accent (professional, capable) and one moment of
+ * gradient color on the hero payoff line.
  *
- * This palette: white/cool-light-gray + modern cobalt accent.
+ * Inspired by Apple's approach: 95% neutral, 5% color — but
+ * when that color lands, it means something.
  *
- * Cobalt blue (#2457D4) sits in the "confident and capable" zone
- * without tipping into the flat, dead feel of classic dark navy.
- * It's energetic enough to signal "modern product" while still
- * reading professional and trustworthy on a services site.
+ * Background: #F6F3EE warm linen — not pure white (too clinical),
+ * not cool gray (too corporate). Linen signals craft and care.
  *
- * Cool light gray background keeps it from feeling like every
- * generic corporate site. The off-white with a blue undertone
- * (not a warm undertone) signals "sharp" rather than "cozy."
- *
- * Typography, spacing, layout — all identical to main.
- * This is purely a palette swap.
+ * Gradient text: reserved for "Get hired." — the emotional
+ * payoff of the headline. Blue → violet → rose reads as
+ * "professional → elevated → personal." Three words, one journey.
  * ─────────────────────────────────────────────────────────────
  */
 
@@ -36,25 +31,25 @@
    ============================================================= */
 :root {
   /* ── Core palette ───────────────────────────────────────── */
-  --color-bg:             #F4F6FA;   /* cool light gray — professional, not sterile */
-  --color-surface:        #FFFFFF;   /* pure white cards */
-  --color-surface-alt:    #EBEEf5;   /* slightly deeper cool gray for alt sections */
-  --color-text-primary:   #0D1B2E;   /* deep navy-black — sharp, not flat black */
-  --color-text-secondary: #5A6478;   /* cool medium gray */
-  --color-text-tertiary:  #9AA3B2;   /* lighter cool gray */
+  --color-bg:             #F6F3EE;   /* warm linen — human, not sterile */
+  --color-surface:        #FFFFFF;   /* pure white cards — contrast */
+  --color-surface-alt:    #EDE9E2;   /* deeper warm for alt sections */
+  --color-text-primary:   #1C1917;   /* warm near-black — not flat */
+  --color-text-secondary: #78716C;   /* warm medium gray */
+  --color-text-tertiary:  #A8A29E;   /* warm light gray */
 
   /* ── Accent: modern cobalt ──────────────────────────────── */
-  --color-accent:         #2457D4;   /* cobalt blue — confident, modern, not flat navy */
-  --color-accent-hover:   #1A45BE;   /* darker on hover */
-  --color-accent-light:   #EBF0FD;   /* very light cobalt tint for backgrounds */
-  --color-accent-text:    #1534A0;   /* darkest cobalt for text on light tint */
+  --color-accent:         #2457D4;
+  --color-accent-hover:   #1A45BE;
+  --color-accent-light:   #EBF0FD;
+  --color-accent-text:    #1534A0;
 
   /* ── Secondary accent: bright blue for links/highlights ─── */
   --color-accent-mid:     #4F81F0;   /* lighter blue for interactive / highlight moments */
 
   /* ── Borders & shadows ──────────────────────────────────── */
-  --color-border:         #D8DDE8;   /* cool light border */
-  --color-border-light:   #E5E9F2;   /* lighter cool border */
+  --color-border:         #DDD8D0;   /* warm light border */
+  --color-border-light:   #E8E3DC;   /* lighter warm border */
 
   /* Typography */
   --font-family:   'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -85,11 +80,11 @@
   --radius-xl:  24px;
   --radius-pill: 999px;
 
-  /* Shadows — cooler tone to match palette */
-  --shadow-sm:  0 1px 3px rgba(13,27,46,0.07), 0 1px 2px rgba(13,27,46,0.05);
-  --shadow-md:  0 4px 12px rgba(13,27,46,0.09), 0 2px 4px rgba(13,27,46,0.06);
-  --shadow-lg:  0 8px 32px rgba(13,27,46,0.11), 0 4px 8px rgba(13,27,46,0.07);
-  --shadow-xl:  0 16px 48px rgba(13,27,46,0.13), 0 8px 16px rgba(13,27,46,0.08);
+  /* Shadows — warm base to match palette */
+  --shadow-sm:  0 1px 3px rgba(28,25,23,0.07), 0 1px 2px rgba(28,25,23,0.05);
+  --shadow-md:  0 4px 12px rgba(28,25,23,0.09), 0 2px 4px rgba(28,25,23,0.06);
+  --shadow-lg:  0 8px 32px rgba(28,25,23,0.11), 0 4px 8px rgba(28,25,23,0.07);
+  --shadow-xl:  0 16px 48px rgba(28,25,23,0.13), 0 8px 16px rgba(28,25,23,0.08);
 
   /* Transitions */
   --transition-fast:   120ms ease;
@@ -183,6 +178,16 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   margin-bottom: var(--sp-4);
 }
 
+/* Gradient text — applied to key headline moments only */
+.text-gradient {
+  background: linear-gradient(135deg, #2457D4 0%, #7C3AED 52%, #C84B8E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Fallback for browsers that don't support background-clip: text */
+  color: var(--color-accent);
+}
+
 
 /* =============================================================
    4. LAYOUT UTILITIES
@@ -255,7 +260,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 .btn-secondary:hover {
   border-color: var(--color-text-secondary);
-  background-color: rgba(13,27,46,0.04);
+  background-color: rgba(28,25,23,0.04);
 }
 
 /* Outline — navy bordered */
@@ -275,7 +280,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   top: 0;
   z-index: 100;
   height: var(--nav-height);
-  background-color: rgba(244, 246, 250, 0.90);
+  background-color: rgba(246, 243, 238, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -388,7 +393,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   text-align: center;
   /* Subtle radial gradient from center — gives the hero depth */
   background: radial-gradient(ellipse 80% 60% at 50% -10%,
-    rgba(36, 87, 212, 0.06) 0%,
+    rgba(180, 120, 210, 0.05) 0%,
     transparent 70%
   ), var(--color-bg);
 }
