@@ -31,25 +31,22 @@
    ============================================================= */
 :root {
   /* ── Core palette ───────────────────────────────────────── */
-  --color-bg:             #FFFFFF;   /* white */
-  --color-surface:        #FFFFFF;   /* white cards */
-  --color-surface-alt:    #F5F5F7;   /* light gray for alt sections */
-  --color-text-primary:   #1D1D1F;   /* Apple near-black */
-  --color-text-secondary: #6E6E73;   /* Apple medium gray */
-  --color-text-tertiary:  #A1A1A6;   /* Apple light gray */
+  --color-bg:             #F5EFE6;   /* warm cream */
+  --color-surface:        #FFFFFF;
+  --color-surface-alt:    #EBE3D5;   /* warmer section background */
+  --color-text-primary:   #1A1714;   /* warm near-black */
+  --color-text-secondary: #6E6861;   /* warm medium gray */
+  --color-text-tertiary:  #9E9890;   /* light warm gray */
 
-  /* ── Accent: modern cobalt ──────────────────────────────── */
-  --color-accent:         #2457D4;
-  --color-accent-hover:   #1A45BE;
-  --color-accent-light:   #EBF0FD;
-  --color-accent-text:    #1534A0;
+  /* ── Accent: muted forest green ─────────────────────────── */
+  --color-accent:         #3E6140;   /* muted forest green */
+  --color-accent-hover:   #2F4E31;
+  --color-accent-light:   #EBF1EB;   /* very light green tint */
+  --color-accent-text:    #284230;   /* dark green for text on light tints */
 
-  /* ── Secondary accent: bright blue for links/highlights ─── */
-  --color-accent-mid:     #4F81F0;   /* lighter blue for interactive / highlight moments */
-
-  /* ── Borders & shadows ──────────────────────────────────── */
-  --color-border:         #D2D2D7;   /* Apple-style cool border */
-  --color-border-light:   #E5E5EA;   /* lighter cool border */
+  /* ── Borders ─────────────────────────────────────────────── */
+  --color-border:         #E0D9CF;   /* warm border */
+  --color-border-light:   #EAE3D8;
 
   /* Typography */
   --font-family:   'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -80,11 +77,11 @@
   --radius-xl:  24px;
   --radius-pill: 999px;
 
-  /* Shadows — warm base to match palette */
-  --shadow-sm:  0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md:  0 4px 12px rgba(0,0,0,0.09), 0 2px 4px rgba(0,0,0,0.06);
-  --shadow-lg:  0 8px 32px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
-  --shadow-xl:  0 16px 48px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.07);
+  /* Shadows */
+  --shadow-sm:  0 1px 3px rgba(26,23,20,0.06), 0 1px 2px rgba(26,23,20,0.04);
+  --shadow-md:  0 4px 12px rgba(26,23,20,0.08), 0 2px 4px rgba(26,23,20,0.05);
+  --shadow-lg:  0 8px 32px rgba(26,23,20,0.10), 0 4px 8px rgba(26,23,20,0.06);
+  --shadow-xl:  0 16px 48px rgba(26,23,20,0.12), 0 8px 16px rgba(26,23,20,0.07);
 
   /* Transitions */
   --transition-fast:   120ms ease;
@@ -174,19 +171,10 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   font-weight: var(--font-weight-semi);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-accent-mid);
+  color: var(--color-accent);
   margin-bottom: var(--sp-4);
 }
 
-/* Gradient text — applied to key headline moments only */
-.text-gradient {
-  background: linear-gradient(135deg, #2457D4 0%, #7C3AED 52%, #C84B8E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  /* Fallback for browsers that don't support background-clip: text */
-  color: var(--color-accent);
-}
 
 
 /* =============================================================
@@ -245,11 +233,11 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 .btn-primary {
   background-color: var(--color-accent);
   color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(36,87,212,0.28);
+  box-shadow: 0 2px 8px rgba(62,97,64,0.25);
 }
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
-  box-shadow: 0 4px 16px rgba(36,87,212,0.32);
+  box-shadow: 0 4px 16px rgba(62,97,64,0.30);
 }
 
 /* Secondary — ghost */
@@ -260,7 +248,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 .btn-secondary:hover {
   border-color: var(--color-text-secondary);
-  background-color: rgba(0,0,0,0.04);
+  background-color: rgba(26,23,20,0.04);
 }
 
 /* Outline — navy bordered */
@@ -280,7 +268,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   top: 0;
   z-index: 100;
   height: var(--nav-height);
-  background-color: rgba(255, 255, 255, 0.90);
+  background-color: rgba(245, 239, 230, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -334,7 +322,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 .nav-cta:hover {
   background-color: var(--color-accent-hover);
-  box-shadow: 0 2px 8px rgba(36,87,212,0.25);
+  box-shadow: 0 2px 8px rgba(62,97,64,0.25);
 }
 
 /* Mobile hamburger */
@@ -392,10 +380,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   padding-bottom: var(--sp-20);
   text-align: center;
   /* Subtle radial gradient from center — gives the hero depth */
-  background: radial-gradient(ellipse 80% 60% at 50% -10%,
-    rgba(180, 120, 210, 0.04) 0%,
-    transparent 70%
-  ), var(--color-bg);
+  background: var(--color-bg);
 }
 
 .hero-content {
@@ -730,7 +715,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   color: var(--color-accent);
   letter-spacing: 0.02em;
   white-space: nowrap;
-  border: 1px solid rgba(36,87,212,0.12);
+  border: 1px solid rgba(62,97,64,0.10);
 }
 
 /* ── COLLATERAL mockup ─────────────────────────────────────── */
@@ -878,7 +863,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   background-color: var(--color-accent-light);
   padding: 3px 8px;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(36,87,212,0.12);
+  border: 1px solid rgba(62,97,64,0.10);
   margin-left: auto;
   flex-shrink: 0;
 }
@@ -1341,7 +1326,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 .form-input:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(36,87,212,0.10);
+  box-shadow: 0 0 0 3px rgba(62,97,64,0.12);
 }
 
 .form-select {
