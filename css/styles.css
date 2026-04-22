@@ -33,7 +33,7 @@
   /* ── Core palette ───────────────────────────────────────── */
   --color-bg:             #FFFFFF;   /* white */
   --color-surface:        #FFFFFF;   /* white cards */
-  --color-surface-alt:    #F5F5F7;   /* Apple-style light gray for alt sections */
+  --color-surface-alt:    #EDE8DC;   /* warm beige — Aloa-style alt sections */
   --color-text-primary:   #1D1D1F;   /* Apple near-black */
   --color-text-secondary: #6E6E73;   /* Apple medium gray */
   --color-text-tertiary:  #A1A1A6;   /* Apple light gray */
@@ -46,6 +46,10 @@
 
   /* ── Secondary accent: bright blue for links/highlights ─── */
   --color-accent-mid:     #4F81F0;   /* lighter blue for interactive / highlight moments */
+
+  /* ── Warm accent: terracotta orange — eyebrows, warm moments ─ */
+  --color-warm-accent:       #C4622D;   /* terracotta orange */
+  --color-warm-accent-light: #FDF0E8;   /* very light orange tint */
 
   /* ── Borders & shadows ──────────────────────────────────── */
   --color-border:         #D2D2D7;   /* Apple-style cool border */
@@ -174,7 +178,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   font-weight: var(--font-weight-semi);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-accent-mid);   /* brighter blue for eyebrows — readable small */
+  color: var(--color-warm-accent);
   margin-bottom: var(--sp-4);
 }
 
@@ -468,6 +472,8 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
    ============================================================= */
 .section-features {
   background-color: var(--color-surface-alt);
+  background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
 .tabs {
@@ -988,8 +994,41 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 .package-card-featured:hover { box-shadow: var(--shadow-lg); }
 
-/* Consult card — slightly off-white */
-.package-card-consult { background-color: var(--color-bg); }
+/* Sage green — Light package */
+.package-card-sage {
+  background-color: #EEF4EE;
+  border-color: #C5DBC5;
+}
+
+/* Amber sand — Ultimate package */
+.package-card-amber {
+  background-color: #F5EDD6;
+  border-color: #DECDA0;
+}
+
+/* Dark charcoal — Consult package */
+.package-card-consult {
+  background-color: #1C1917;
+  border-color: #1C1917;
+}
+.package-card-consult .package-tier  { color: rgba(255,255,255,0.45); }
+.package-card-consult .package-currency,
+.package-card-consult .package-amount { color: #FFFFFF; }
+.package-card-consult h3             { color: #FFFFFF; }
+.package-card-consult .package-desc  { color: rgba(255,255,255,0.65); }
+.package-card-consult .package-features li { color: rgba(255,255,255,0.70); }
+.package-card-consult .package-features li::before {
+  color: rgba(255,255,255,0.90);
+  background-color: rgba(255,255,255,0.12);
+}
+.package-card-consult .btn-outline {
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.35);
+}
+.package-card-consult .btn-outline:hover {
+  background-color: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.55);
+}
 
 .package-badge {
   position: absolute;
@@ -1093,7 +1132,11 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 /* =============================================================
    11. PROCESS
    ============================================================= */
-.section-process { background-color: var(--color-surface-alt); }
+.section-process {
+  background-color: var(--color-surface-alt);
+  background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
 
 .process-steps {
   display: flex;
@@ -1113,11 +1156,11 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   padding: var(--sp-6);
 }
 
-/* Process numbers in navy */
+/* Process numbers in warm orange */
 .process-num {
   width: 64px;
   height: 64px;
-  background-color: var(--color-accent-light);
+  background-color: var(--color-warm-accent-light);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1125,7 +1168,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   flex-shrink: 0;
   font-size: 1.25rem;
   font-weight: var(--font-weight-bold);
-  color: var(--color-accent);
+  color: var(--color-warm-accent);
   letter-spacing: -0.04em;
 }
 
@@ -1429,7 +1472,11 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 /* =============================================================
    14. FAQ — card containers
    ============================================================= */
-.section-faq { background-color: var(--color-surface-alt); }
+.section-faq {
+  background-color: var(--color-surface-alt);
+  background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
 
 .faq-list {
   max-width: 720px;
@@ -1534,9 +1581,11 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
    15. FOOTER
    ============================================================= */
 .footer {
-  border-top: 1px solid var(--color-border-light);
+  border-top: none;
   padding: var(--sp-12) 0 var(--sp-10);
-  background-color: var(--color-bg);
+  background-color: var(--color-surface-alt);
+  background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
 .footer-inner {
