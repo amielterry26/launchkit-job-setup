@@ -1,44 +1,33 @@
 /* =============================================================
-   LaunchKit — styles.css  (v2)
-   Premium minimal single-page website
-   Design: warm neutral palette, Inter typeface, lots of space
+   LaunchKit — styles.css  (branch: light)
+   Color direction: clean white/cool-gray + deep navy
+   Professional services palette — reads "career-ready" instantly
    ============================================================= */
 
 
 /*
  * ─────────────────────────────────────────────────────────────
- * COLOR PALETTE — DESIGN NOTES (Claude's recommendation)
+ * WHY THIS PALETTE (branch: light)
  * ─────────────────────────────────────────────────────────────
- * The v1 palette was solid. These are the refinements made in v2
- * and my broader thoughts if you want to push further later.
+ * The tan/cream palette from main reads "zen wellness finance."
+ * Beautiful — but it borrows its emotional language from a
+ * different use case. A job-search service needs to feel sharp,
+ * ready, and professional at first glance.
  *
- * ACCENT (v1: #4B6B4E → v2: #3E6140)
- *   Deepened and very slightly more saturated. This reads more
- *   confidently against the cream background — the original was
- *   a touch flat on some monitors. The green still communicates
- *   "growth, progress, calm" which suits this service well.
+ * This palette: white/cool-light-gray + deep navy accent.
  *
- * BACKGROUND (v1: #F7F2EB → v2: #F5EFE6)
- *   Moved slightly warmer and richer. The difference is subtle
- *   but the page feels a touch more editorial.
+ * Deep navy (#1B3B6F range) is the color of a pressed suit,
+ * a strong cover letter, a clean LinkedIn profile photo.
+ * People unconsciously associate it with career, expertise,
+ * and competence. It's used by LinkedIn, top-tier law firms,
+ * consulting practices, and serious professional services.
  *
- * SURFACE-ALT (v1: #F0EAE0 → v2: #EBE3D5)
- *   Deepened to create clearer visual separation between
- *   alternating sections without needing additional borders.
+ * Cool light gray background keeps it from feeling like every
+ * generic corporate site. The off-white with a blue undertone
+ * (not a warm undertone) signals "sharp" rather than "cozy."
  *
- * IF YOU WANT A WARMER ACCENT IN THE FUTURE:
- *   Option: #B07D4A — warm bronze/amber. Pairs beautifully with
- *   cream. Used by high-end editorial and consulting brands.
- *   The tradeoff: it shifts the feel from "professional/tech"
- *   toward "craft/boutique." For a job-search service aimed at
- *   professionals, that may or may not be the right read.
- *
- * WHAT I WOULD NOT DO:
- *   Don't add orange, coral, or bright green. They're cheaper-
- *   feeling on a neutral background and undercut the premium tone.
- *   The muted green-on-cream is the right call. Small saturation
- *   bump on the green + slightly richer background = better
- *   without a redesign.
+ * Typography, spacing, layout — all identical to main.
+ * This is purely a palette swap.
  * ─────────────────────────────────────────────────────────────
  */
 
@@ -47,19 +36,26 @@
    1. DESIGN TOKENS
    ============================================================= */
 :root {
-  /* Colors — v2 refinements noted */
-  --color-bg:             #F5EFE6;   /* warm cream (slightly richer than v1) */
-  --color-surface:        #FFFFFF;
-  --color-surface-alt:    #EBE3D5;   /* warmer section background (more distinct) */
-  --color-text-primary:   #1A1714;   /* warm near-black */
-  --color-text-secondary: #6E6861;   /* warm medium gray */
-  --color-text-tertiary:  #9E9890;   /* light warm gray */
-  --color-accent:         #3E6140;   /* muted forest green (deeper than v1) */
-  --color-accent-hover:   #2F4E31;
-  --color-accent-light:   #EBF1EB;   /* very light green tint */
-  --color-accent-text:    #284230;   /* dark green for text on light tints */
-  --color-border:         #E0D9CF;   /* warm border */
-  --color-border-light:   #EAE3D8;
+  /* ── Core palette ───────────────────────────────────────── */
+  --color-bg:             #F4F6FA;   /* cool light gray — professional, not sterile */
+  --color-surface:        #FFFFFF;   /* pure white cards */
+  --color-surface-alt:    #EBEEf5;   /* slightly deeper cool gray for alt sections */
+  --color-text-primary:   #0D1B2E;   /* deep navy-black — sharp, not flat black */
+  --color-text-secondary: #5A6478;   /* cool medium gray */
+  --color-text-tertiary:  #9AA3B2;   /* lighter cool gray */
+
+  /* ── Accent: deep navy ──────────────────────────────────── */
+  --color-accent:         #1B3B6F;   /* deep navy — the core brand color */
+  --color-accent-hover:   #132D56;   /* darker on hover */
+  --color-accent-light:   #E8EEF8;   /* very light navy tint for backgrounds */
+  --color-accent-text:    #0F2447;   /* darkest navy for text on light tint */
+
+  /* ── Secondary accent: clear mid-blue for links/highlights  */
+  --color-accent-mid:     #2563EB;   /* brighter blue for interactive / highlight moments */
+
+  /* ── Borders & shadows ──────────────────────────────────── */
+  --color-border:         #D8DDE8;   /* cool light border */
+  --color-border-light:   #E5E9F2;   /* lighter cool border */
 
   /* Typography */
   --font-family:   'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -90,11 +86,11 @@
   --radius-xl:  24px;
   --radius-pill: 999px;
 
-  /* Shadows */
-  --shadow-sm:  0 1px 3px rgba(26,23,20,0.06), 0 1px 2px rgba(26,23,20,0.04);
-  --shadow-md:  0 4px 12px rgba(26,23,20,0.08), 0 2px 4px rgba(26,23,20,0.05);
-  --shadow-lg:  0 8px 32px rgba(26,23,20,0.10), 0 4px 8px rgba(26,23,20,0.06);
-  --shadow-xl:  0 16px 48px rgba(26,23,20,0.12), 0 8px 16px rgba(26,23,20,0.07);
+  /* Shadows — cooler tone to match palette */
+  --shadow-sm:  0 1px 3px rgba(13,27,46,0.07), 0 1px 2px rgba(13,27,46,0.05);
+  --shadow-md:  0 4px 12px rgba(13,27,46,0.09), 0 2px 4px rgba(13,27,46,0.06);
+  --shadow-lg:  0 8px 32px rgba(13,27,46,0.11), 0 4px 8px rgba(13,27,46,0.07);
+  --shadow-xl:  0 16px 48px rgba(13,27,46,0.13), 0 8px 16px rgba(13,27,46,0.08);
 
   /* Transitions */
   --transition-fast:   120ms ease;
@@ -170,20 +166,21 @@ h1, h2, h3, h4 {
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem);   font-weight: var(--font-weight-bold); }
+h1 { font-size: clamp(2.5rem, 5vw, 4rem);    font-weight: var(--font-weight-bold); }
 h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
 h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: var(--font-weight-semi); }
 h4 { font-size: 1.125rem; }
 
 p  { color: var(--color-text-secondary); line-height: 1.7; }
 
+/* Eyebrow — navy instead of green */
 .eyebrow {
   display: inline-block;
   font-size: 0.6875rem;
   font-weight: var(--font-weight-semi);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-accent-mid);   /* brighter blue for eyebrows — readable small */
   margin-bottom: var(--sp-4);
 }
 
@@ -204,7 +201,6 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   text-align: center;
   margin-bottom: var(--sp-12);
 }
-
 .section-header h2 { margin-bottom: var(--sp-4); }
 
 .section-sub {
@@ -241,16 +237,18 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 
 .btn:active { transform: translateY(1px); }
 
+/* Primary — deep navy */
 .btn-primary {
   background-color: var(--color-accent);
   color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(62,97,64,0.25);
+  box-shadow: 0 2px 8px rgba(27,59,111,0.28);
 }
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
-  box-shadow: 0 4px 16px rgba(62,97,64,0.30);
+  box-shadow: 0 4px 16px rgba(27,59,111,0.32);
 }
 
+/* Secondary — ghost */
 .btn-secondary {
   background-color: transparent;
   color: var(--color-text-primary);
@@ -258,9 +256,10 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 .btn-secondary:hover {
   border-color: var(--color-text-secondary);
-  background-color: rgba(26,23,20,0.04);
+  background-color: rgba(13,27,46,0.04);
 }
 
+/* Outline — navy bordered */
 .btn-outline {
   background-color: transparent;
   color: var(--color-accent);
@@ -277,7 +276,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   top: 0;
   z-index: 100;
   height: var(--nav-height);
-  background-color: rgba(245, 239, 230, 0.88);
+  background-color: rgba(244, 246, 250, 0.90);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -300,7 +299,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   font-size: 1.125rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.03em;
-  color: var(--color-text-primary);
+  color: var(--color-accent);   /* logo in deep navy */
 }
 
 .nav-links {
@@ -317,19 +316,24 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 .nav-link:hover { color: var(--color-text-primary); }
 
+/* Nav CTA — navy pill */
 .nav-cta {
   display: inline-flex;
   align-items: center;
   padding: 9px 18px;
   border-radius: var(--radius-md);
-  background-color: var(--color-text-primary);
-  color: var(--color-bg);
+  background-color: var(--color-accent);
+  color: #FFFFFF;
   font-size: 0.875rem;
   font-weight: var(--font-weight-medium);
-  transition: opacity var(--transition-base);
+  transition: background-color var(--transition-base), box-shadow var(--transition-base);
 }
-.nav-cta:hover { opacity: 0.85; }
+.nav-cta:hover {
+  background-color: var(--color-accent-hover);
+  box-shadow: 0 2px 8px rgba(27,59,111,0.25);
+}
 
+/* Mobile hamburger */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -383,6 +387,11 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   padding-top: calc(var(--sp-24) + var(--sp-8));
   padding-bottom: var(--sp-20);
   text-align: center;
+  /* Subtle radial gradient from center — gives the hero depth */
+  background: radial-gradient(ellipse 80% 60% at 50% -10%,
+    rgba(27, 59, 111, 0.06) 0%,
+    transparent 70%
+  ), var(--color-bg);
 }
 
 .hero-content {
@@ -486,8 +495,9 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 .tab-btn:hover { color: var(--color-text-primary); }
 .tab-btn.active {
   background-color: var(--color-surface);
-  color: var(--color-text-primary);
+  color: var(--color-accent);          /* active tab label in navy */
   box-shadow: var(--shadow-sm);
+  font-weight: var(--font-weight-semi);
 }
 
 .tab-content { position: relative; }
@@ -544,10 +554,8 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 
 /* =============================================================
    9. CSS MOCKUP COMPONENTS
-   Browser-window style panels with stylized UI art.
    ============================================================= */
 
-/* Outer browser window frame */
 .mock-window {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -556,13 +564,12 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   overflow: hidden;
 }
 
-/* Window chrome bar */
 .mock-window-bar {
   display: flex;
   align-items: center;
   gap: var(--sp-2);
   padding: var(--sp-3) var(--sp-4);
-  background-color: #EDE5D9;
+  background-color: #E8ECF5;          /* cool blue-tinted chrome bar */
   border-bottom: 1px solid var(--color-border-light);
 }
 
@@ -584,7 +591,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   margin-left: var(--sp-2);
 }
 
-/* ── Shared mock primitives ────────────────────────────────── */
+/* ── Shared primitives ─────────────────────────────────────── */
 .mock-line {
   height: 10px;
   background-color: var(--color-border-light);
@@ -604,7 +611,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-text-tertiary);
+  color: var(--color-accent-mid);      /* navy-blue section labels */
   margin-bottom: var(--sp-2);
 }
 
@@ -613,15 +620,12 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   padding: var(--sp-5) var(--sp-6);
 }
 
-/* Name + title use actual text for realism */
-.mock-resume-top {
-  margin-bottom: var(--sp-3);
-}
+.mock-resume-top { margin-bottom: var(--sp-3); }
 
 .mock-r-name {
   font-size: 1rem;
   font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
+  color: var(--color-accent);          /* name in navy — strong, professional */
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 2px;
@@ -654,7 +658,6 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   line-height: 1;
 }
 
-/* Job entry row: title on left, date right */
 .mock-job-row {
   display: flex;
   justify-content: space-between;
@@ -685,7 +688,6 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   margin-bottom: var(--sp-2);
 }
 
-/* Bullet-point rows */
 .mock-bullets {
   display: flex;
   flex-direction: column;
@@ -706,7 +708,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   flex-shrink: 0;
 }
 
-/* Skill pills — contain actual text labels for realism */
+/* Skill pills — navy tint */
 .mock-pills {
   display: flex;
   flex-wrap: wrap;
@@ -721,13 +723,13 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   border-radius: var(--radius-pill);
   font-size: 0.5rem;
   font-weight: var(--font-weight-medium);
-  color: var(--color-accent-text);
+  color: var(--color-accent);
   letter-spacing: 0.02em;
   white-space: nowrap;
-  border: 1px solid rgba(62,97,64,0.10);
+  border: 1px solid rgba(27,59,111,0.12);
 }
 
-/* ── COLLATERAL mockup — stacked docs ──────────────────────── */
+/* ── COLLATERAL mockup ─────────────────────────────────────── */
 .mock-doc-stack {
   display: flex;
   flex-direction: column;
@@ -735,7 +737,6 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   padding: var(--sp-5) var(--sp-6);
 }
 
-/* Each mini-document card */
 .mock-doc-card {
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
@@ -745,7 +746,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 
 .mock-doc-card-refs {
-  background-color: #FAFAF8; /* very slightly off-white for distinction */
+  background-color: #F8F9FD;
 }
 
 .mock-doc-card-label {
@@ -807,11 +808,8 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   gap: 5px;
 }
 
-.mock-doc-signoff {
-  margin-top: var(--sp-3);
-}
+.mock-doc-signoff { margin-top: var(--sp-3); }
 
-/* Reference entries */
 .mock-ref-entry {
   padding-bottom: var(--sp-3);
   margin-bottom: var(--sp-3);
@@ -866,7 +864,6 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 .mock-title-line   { width: 90px;  height: 9px;  background-color: var(--color-border-light); border-radius: var(--radius-sm); }
 .mock-contact-line { width: 140px; height: 9px;  background-color: var(--color-border-light); border-radius: var(--radius-sm); }
 
-/* Active status pill */
 .mock-profile-status {
   display: flex;
   align-items: center;
@@ -877,7 +874,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   background-color: var(--color-accent-light);
   padding: 3px 8px;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(62,97,64,0.12);
+  border: 1px solid rgba(27,59,111,0.12);
   margin-left: auto;
   flex-shrink: 0;
 }
@@ -886,7 +883,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-mid);
 }
 
 .mock-platform-section-label {
@@ -898,7 +895,6 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   margin-bottom: var(--sp-3);
 }
 
-/* 2×2 grid of platform cards */
 .mock-platforms-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -909,7 +905,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  padding: var(--sp-3) var(--sp-3);
+  padding: var(--sp-3);
 }
 
 .mock-pcard-header {
@@ -988,6 +984,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 .package-card-featured:hover { box-shadow: var(--shadow-lg); }
 
+/* Consult card — slightly off-white */
 .package-card-consult { background-color: var(--color-bg); }
 
 .package-badge {
@@ -1112,6 +1109,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   padding: var(--sp-6);
 }
 
+/* Process numbers in navy */
 .process-num {
   width: 64px;
   height: 64px;
@@ -1154,7 +1152,6 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 
 /* =============================================================
    12. FOUNDER VIDEO SECTION
-   Premium, understated. Video placeholder until real embed added.
    ============================================================= */
 .section-video {
   background-color: var(--color-bg);
@@ -1181,14 +1178,13 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 
 .video-text p + p { margin-top: var(--sp-4); }
 
-/* 16:9 aspect ratio wrapper */
 .video-embed-wrap {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background-color: var(--color-text-primary);
+  background-color: var(--color-accent);   /* deep navy for placeholder */
   box-shadow: var(--shadow-lg);
 }
 
@@ -1200,7 +1196,6 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   border: 0;
 }
 
-/* Shown when no iframe is present */
 .video-placeholder {
   position: absolute;
   inset: 0;
@@ -1215,18 +1210,18 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.18);
+  border: 2px solid rgba(255,255,255,0.22);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.125rem;
-  color: rgba(255,255,255,0.30);
-  padding-left: 3px; /* optical center for ▶ */
+  color: rgba(255,255,255,0.35);
+  padding-left: 3px;
 }
 
 .video-placeholder-label {
   font-size: 0.8125rem;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.28);
   letter-spacing: 0.04em;
   margin: 0;
 }
@@ -1317,7 +1312,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   color: var(--color-text-primary);
 }
 
-.form-required { color: var(--color-accent); margin-left: 2px; }
+.form-required { color: var(--color-accent-mid); margin-left: 2px; }
 
 .form-optional {
   font-weight: var(--font-weight-normal);
@@ -1342,11 +1337,11 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 .form-input:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(62,97,64,0.12);
+  box-shadow: 0 0 0 3px rgba(27,59,111,0.10);
 }
 
 .form-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236E6861' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A6478' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   padding-right: 40px;
@@ -1388,10 +1383,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   pointer-events: none;
 }
 
-.form-hint {
-  font-size: 0.75rem;
-  color: var(--color-text-tertiary);
-}
+.form-hint { font-size: 0.75rem; color: var(--color-text-tertiary); }
 
 .btn-submit { padding: 14px 36px; }
 
@@ -1401,7 +1393,6 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   line-height: 1.5;
 }
 
-/* Success state */
 .form-success {
   text-align: center;
   padding: var(--sp-16) var(--sp-8);
@@ -1432,7 +1423,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 
 
 /* =============================================================
-   14. FAQ — card containers (v2 upgrade from plain border-lines)
+   14. FAQ — card containers
    ============================================================= */
 .section-faq { background-color: var(--color-surface-alt); }
 
@@ -1441,10 +1432,9 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-3);     /* gap between cards */
+  gap: var(--sp-3);
 }
 
-/* Each item is now its own white card */
 .faq-item {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -1470,13 +1460,12 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 .faq-question:hover { color: var(--color-accent); }
 
-/* Open state: subtle tinted header */
 .faq-question[aria-expanded="true"] {
-  background-color: #FAFAF8;
+  background-color: #F4F6FB;         /* very light navy tint when open */
   border-bottom: 1px solid var(--color-border-light);
+  color: var(--color-accent);
 }
 
-/* Animated +/× icon */
 .faq-icon {
   width: 22px;
   height: 22px;
@@ -1519,7 +1508,6 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   opacity: 0;
 }
 
-/* Answer panel */
 .faq-answer {
   overflow: hidden;
   max-height: 0;
@@ -1565,7 +1553,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   font-size: 1rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.02em;
-  color: var(--color-text-primary);
+  color: var(--color-accent);    /* logo in deep navy */
 }
 
 .footer-tagline {
@@ -1576,11 +1564,11 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 .footer-link {
   font-size: 0.9375rem;
   font-weight: var(--font-weight-medium);
-  color: var(--color-accent);
+  color: var(--color-accent-mid);
   transition: color var(--transition-base);
 }
 .footer-link:hover {
-  color: var(--color-accent-hover);
+  color: var(--color-accent);
   text-decoration: underline;
 }
 
@@ -1589,10 +1577,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   border-top: 1px solid var(--color-border-light);
 }
 
-.footer-copy {
-  font-size: 0.8125rem;
-  color: var(--color-text-tertiary);
-}
+.footer-copy { font-size: 0.8125rem; color: var(--color-text-tertiary); }
 
 
 /* =============================================================
