@@ -31,9 +31,9 @@
    ============================================================= */
 :root {
   /* ── Core palette ───────────────────────────────────────── */
-  --color-bg:             #F5EFE6;   /* warm cream */
-  --color-surface:        #FFFFFF;
-  --color-surface-alt:    #EBE3D5;   /* warmer section background */
+  --color-bg:             #FAF8F5;   /* soft near-white cream — lighter than before */
+  --color-surface:        #FFFFFF;   /* pure white — cards sit elevated above bg */
+  --color-surface-alt:    #EBE3D5;   /* warm tan — alternating sections */
   --color-text-primary:   #1A1714;   /* warm near-black */
   --color-text-secondary: #6E6861;   /* warm medium gray */
   --color-text-tertiary:  #9E9890;   /* light warm gray */
@@ -77,9 +77,9 @@
   --radius-xl:  24px;
   --radius-pill: 999px;
 
-  /* Shadows */
-  --shadow-sm:  0 1px 3px rgba(26,23,20,0.06), 0 1px 2px rgba(26,23,20,0.04);
-  --shadow-md:  0 4px 12px rgba(26,23,20,0.08), 0 2px 4px rgba(26,23,20,0.05);
+  /* Shadows — slightly more visible for card elevation on lighter bg */
+  --shadow-sm:  0 1px 4px rgba(26,23,20,0.09), 0 1px 2px rgba(26,23,20,0.06);
+  --shadow-md:  0 4px 14px rgba(26,23,20,0.11), 0 2px 4px rgba(26,23,20,0.07);
   --shadow-lg:  0 8px 32px rgba(26,23,20,0.10), 0 4px 8px rgba(26,23,20,0.06);
   --shadow-xl:  0 16px 48px rgba(26,23,20,0.12), 0 8px 16px rgba(26,23,20,0.07);
 
@@ -164,7 +164,6 @@ h4 { font-size: 1.125rem; }
 
 p  { color: var(--color-text-secondary); line-height: 1.7; }
 
-/* Eyebrow — navy instead of green */
 .eyebrow {
   display: inline-block;
   font-size: 0.6875rem;
@@ -173,6 +172,15 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   text-transform: uppercase;
   color: var(--color-accent);
   margin-bottom: var(--sp-4);
+}
+
+/* Warm gradient text — hero payoff line only */
+.text-gradient {
+  background: linear-gradient(120deg, #3E6140 0%, #A67C3B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--color-accent); /* fallback */
 }
 
 
