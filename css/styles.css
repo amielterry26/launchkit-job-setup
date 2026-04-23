@@ -1,7 +1,7 @@
 /* =============================================================
-   LaunchKit — styles.css  (branch: light)
-   Color direction: warm linen base + cobalt accent + selective gradient moments
-   Professional services palette — reads "career-ready" instantly
+   LaunchKit — styles.css  (branch: claude)
+   Color direction: warm cream base + Claude orange accent
+   Professional services palette with Claude brand energy
    ============================================================= */
 
 
@@ -9,19 +9,16 @@
  * ─────────────────────────────────────────────────────────────
  * WHY THIS PALETTE
  * ─────────────────────────────────────────────────────────────
- * Hybrid approach: warm sand/linen base (personal, human) with
- * cobalt blue accent (professional, capable) and one moment of
- * gradient color on the hero payoff line.
+ * Claude-inspired: warm cream/linen base with the distinctive
+ * Claude orange (#DA7756) as the single accent color.
  *
- * Inspired by Apple's approach: 95% neutral, 5% color — but
- * when that color lands, it means something.
+ * The orange is warm and confident — not aggressive. It reads
+ * "intelligent and approachable," which fits a premium career
+ * service perfectly.
  *
- * Background: #F6F3EE warm linen — not pure white (too clinical),
- * not cool gray (too corporate). Linen signals craft and care.
- *
- * Gradient text: reserved for "Get hired." — the emotional
- * payoff of the headline. Blue → violet → rose reads as
- * "professional → elevated → personal." Three words, one journey.
+ * Background: #FAF8F5 soft cream — the same warmth Claude uses.
+ * Accent: #DA7756 — Claude's signature coral-orange.
+ * Gradient text: orange → amber, a nod to Claude's brand warmth.
  * ─────────────────────────────────────────────────────────────
  */
 
@@ -33,16 +30,17 @@
   /* ── Core palette ───────────────────────────────────────── */
   --color-bg:             #FAF8F5;   /* soft near-white cream — lighter than before */
   --color-surface:        #FFFFFF;   /* pure white — cards sit elevated above bg */
-  --color-surface-alt:    #EBE3D5;   /* warm tan — alternating sections */
-  --color-text-primary:   #1A1714;   /* warm near-black */
-  --color-text-secondary: #6E6861;   /* warm medium gray */
-  --color-text-tertiary:  #9E9890;   /* light warm gray */
+  --color-surface-alt:    #F3F0EA;   /* very light warm — subtle section rhythm */
+  --color-text-primary:   #0F0D0C;   /* true near-black */
+  --color-text-secondary: #0F0D0C;   /* same as primary — full black body text */
+  --color-text-tertiary:  #5A544E;   /* medium warm gray — supporting/meta text */
 
-  /* ── Accent: muted forest green ─────────────────────────── */
-  --color-accent:         #3E6140;   /* muted forest green */
-  --color-accent-hover:   #2F4E31;
-  --color-accent-light:   #EBF1EB;   /* very light green tint */
-  --color-accent-text:    #284230;   /* dark green for text on light tints */
+  /* ── Accent: Claude orange ──────────────────────────────── */
+  --color-accent:         #DA7756;   /* Claude coral-orange */
+  --color-accent-hover:   #C4654A;   /* darker for hover states */
+  --color-accent-mid:     #E8906A;   /* mid-tone for subtle elements */
+  --color-accent-light:   #FDF0EB;   /* very light orange tint */
+  --color-accent-text:    #7A3520;   /* dark orange for text on light tints */
 
   /* ── Borders ─────────────────────────────────────────────── */
   --color-border:         #E0D9CF;   /* warm border */
@@ -176,7 +174,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 
 /* Warm gradient text — hero payoff line only */
 .text-gradient {
-  background: linear-gradient(120deg, #3E6140 0%, #A67C3B 100%);
+  background: linear-gradient(120deg, #DA7756 0%, #E8A96A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -259,13 +257,16 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   background-color: rgba(26,23,20,0.04);
 }
 
-/* Outline — navy bordered */
+/* Outline — black bordered */
 .btn-outline {
   background-color: transparent;
-  color: var(--color-accent);
-  border: 1.5px solid var(--color-accent);
+  color: var(--color-text-primary);
+  border: 1.5px solid var(--color-text-primary);
 }
-.btn-outline:hover { background-color: var(--color-accent-light); }
+.btn-outline:hover {
+  background-color: var(--color-text-primary);
+  color: #FFFFFF;
+}
 
 
 /* =============================================================
@@ -299,7 +300,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   font-size: 1.125rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.03em;
-  color: var(--color-accent);   /* logo in deep navy */
+  color: var(--color-text-primary);
 }
 
 .nav-links {
@@ -316,6 +317,29 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 .nav-link:hover { color: var(--color-text-primary); }
 
+/* Theme toggle button */
+.nav-theme-toggle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base), background-color var(--transition-base);
+  flex-shrink: 0;
+}
+.nav-theme-toggle:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-accent-light);
+}
+.nav-theme-toggle svg { display: block; }
+.nav-theme-toggle .icon-sun  { display: none; }
+.nav-theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .nav-theme-toggle .icon-sun  { display: block; }
+[data-theme="dark"] .nav-theme-toggle .icon-moon { display: none; }
+
 /* Nav CTA — navy pill */
 .nav-cta {
   display: inline-flex;
@@ -330,53 +354,66 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 .nav-cta:hover {
   background-color: var(--color-accent-hover);
-  box-shadow: 0 2px 8px rgba(62,97,64,0.25);
+  box-shadow: 0 2px 8px rgba(218,119,86,0.30);
 }
 
-/* Mobile hamburger */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  width: 28px;
-  cursor: pointer;
-  padding: var(--sp-1);
+/* Groups theme toggle + Get Started on the right */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
 }
 
-.nav-toggle-bar {
-  display: block;
-  width: 100%;
-  height: 1.5px;
-  background-color: var(--color-text-primary);
-  border-radius: 2px;
-  transition: transform var(--transition-base), opacity var(--transition-base);
-}
 
-.nav-mobile {
-  display: none;
-  flex-direction: column;
-  padding: var(--sp-4) var(--container-pad) var(--sp-6);
-  background-color: var(--color-bg);
-  border-top: 1px solid var(--color-border-light);
-}
-.nav-mobile.open { display: flex; }
+/* =============================================================
+   FLOATING PILL NAV — mobile only (≤960px)
+   ============================================================= */
+.pill-nav { display: none; }
 
-.nav-mobile-link {
-  padding: var(--sp-4) 0;
-  font-size: 1rem;
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
-  border-bottom: 1px solid var(--color-border-light);
-  transition: color var(--transition-base);
-}
-.nav-mobile-link:last-child { border-bottom: none; }
-.nav-mobile-link:hover { color: var(--color-text-primary); }
+@media (max-width: 960px) {
+  .pill-nav {
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 900;
+    align-items: center;
+    gap: 2px;
+    padding: 5px;
+    background-color: rgba(26,23,20,0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+    white-space: nowrap;
+  }
 
-.nav-mobile-cta {
-  color: var(--color-accent);
-  font-weight: var(--font-weight-semi);
-  margin-top: var(--sp-3);
-  border-bottom: none;
+  .pill-nav-link {
+    padding: 8px 13px;
+    font-size: 0.8125rem;
+    font-weight: var(--font-weight-medium);
+    color: rgba(255,255,255,0.72);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+  }
+  .pill-nav-link:hover {
+    color: #FFFFFF;
+    background-color: rgba(255,255,255,0.10);
+  }
+
+  .pill-nav-cta {
+    padding: 8px 16px;
+    font-size: 0.8125rem;
+    font-weight: var(--font-weight-semi);
+    color: #FFFFFF;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    transition: background-color var(--transition-fast);
+  }
+  .pill-nav-cta:hover { background-color: var(--color-accent-hover); }
 }
 
 
@@ -384,11 +421,12 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
    7. HERO
    ============================================================= */
 .section-hero {
-  padding-top: calc(var(--sp-24) + var(--sp-8));
+  padding-top: calc(var(--sp-20) + var(--sp-4));
   padding-bottom: var(--sp-20);
   text-align: center;
-  /* Subtle radial gradient from center — gives the hero depth */
-  background: var(--color-bg);
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 0%, rgba(218,119,86,0.16) 0%, transparent 70%),
+    var(--color-bg);
 }
 
 .hero-content {
@@ -498,6 +536,8 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 
 .tab-content { position: relative; }
+.tab-dots { display: none; }       /* desktop: hidden */
+.tab-desc-mobile { display: none; } /* desktop: hidden — shown only on mobile */
 
 .tab-panel {
   display: grid;
@@ -555,8 +595,9 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 
 .mock-window {
   background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 1.5px solid rgba(218,119,86,0.40);
   border-radius: var(--radius-lg);
+  box-shadow: 0 12px 40px rgba(218,119,86,0.10), 0 4px 12px rgba(26,23,20,0.08);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
@@ -593,6 +634,9 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   height: 10px;
   background-color: var(--color-border-light);
   border-radius: var(--radius-sm);
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
 }
 
 .mock-divider {
@@ -610,6 +654,14 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   text-transform: uppercase;
   color: var(--color-accent-mid);      /* navy-blue section labels */
   margin-bottom: var(--sp-2);
+}
+
+/* ── Real text inside mockups ──────────────────────────────── */
+.mock-text-line {
+  font-size: 0.5rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  padding-left: 0;
 }
 
 /* ── RESUME mockup ─────────────────────────────────────────── */
@@ -642,12 +694,11 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 
 .mock-r-contact-item {
-  height: 7px;
-  width: 64px;
-  background-color: var(--color-border-light);
-  border-radius: var(--radius-sm);
+  font-size: 0.4rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
 }
-.mock-r-contact-wide { width: 88px; }
+.mock-r-contact-wide { /* no override needed */ }
 
 .mock-r-contact-sep {
   color: var(--color-text-tertiary);
@@ -663,25 +714,20 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 
 .mock-job-title {
-  height: 9px;
-  width: 62%;
-  background-color: var(--color-border);
-  border-radius: var(--radius-sm);
+  font-size: 0.5rem;
+  font-weight: var(--font-weight-semi);
+  color: var(--color-text-primary);
 }
 
 .mock-job-date {
-  height: 8px;
-  width: 48px;
-  background-color: var(--color-border-light);
-  border-radius: var(--radius-sm);
+  font-size: 0.4375rem;
+  color: var(--color-text-secondary);
   flex-shrink: 0;
 }
 
 .mock-job-company {
-  height: 7px;
-  width: 44%;
-  background-color: var(--color-border-light);
-  border-radius: var(--radius-sm);
+  font-size: 0.4375rem;
+  color: var(--color-text-secondary);
   margin-bottom: var(--sp-2);
 }
 
@@ -743,7 +789,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 
 .mock-doc-card-refs {
-  background-color: #F8F9FD;
+  background-color: var(--color-surface-alt);
 }
 
 .mock-doc-card-label {
@@ -771,32 +817,30 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 
 .mock-doc-name {
-  height: 10px;
-  width: 90px;
-  background-color: var(--color-border);
-  border-radius: var(--radius-sm);
-  margin-bottom: var(--sp-1);
+  font-size: 0.625rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+  line-height: 1.3;
 }
 
 .mock-doc-contact-line {
-  height: 7px;
-  width: 130px;
-  background-color: var(--color-border-light);
-  border-radius: var(--radius-sm);
+  font-size: 0.4375rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2px;
 }
 
 .mock-doc-sep {
   height: 1px;
   background-color: var(--color-border-light);
-  margin: var(--sp-3) 0;
+  margin: var(--sp-2) 0;
 }
 
 .mock-doc-greeting {
-  height: 8px;
-  width: 100px;
-  background-color: var(--color-border);
-  border-radius: var(--radius-sm);
-  margin-bottom: var(--sp-3);
+  font-size: 0.5rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--sp-2);
 }
 
 .mock-doc-body {
@@ -819,10 +863,10 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 }
 
 .mock-ref-name {
-  height: 10px;
-  width: 70%;
-  background-color: var(--color-border);
-  border-radius: var(--radius-sm);
+  font-size: 0.5625rem;
+  font-weight: var(--font-weight-semi);
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
 }
 
 /* ── PROFILES mockup ───────────────────────────────────────── */
@@ -976,10 +1020,20 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 
 .package-card-featured {
   border-color: var(--color-accent);
-  border-width: 1.5px;
+  border-width: 2px;
   box-shadow: var(--shadow-md);
+  animation: featured-glow 2.8s ease-in-out infinite;
 }
-.package-card-featured:hover { box-shadow: var(--shadow-lg); }
+.package-card-featured:hover {
+  animation-play-state: paused;
+  box-shadow: 0 0 0 5px rgba(218,119,86,0.18), var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+@keyframes featured-glow {
+  0%, 100% { box-shadow: var(--shadow-md); }
+  50%       { box-shadow: 0 0 0 5px rgba(218,119,86,0.16), var(--shadow-lg); }
+}
 
 /* Consult card — slightly off-white */
 .package-card-consult { background-color: var(--color-bg); }
@@ -1103,7 +1157,16 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   align-items: center;
   text-align: center;
   gap: var(--sp-5);
-  padding: var(--sp-6);
+  padding: var(--sp-8) var(--sp-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+.process-step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Process numbers */
@@ -1148,7 +1211,54 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 
 
 /* =============================================================
-   12. FOUNDER VIDEO SECTION
+   12. CONSULT CALLOUT
+   ============================================================= */
+.consult-cta-inner {
+  margin-top: var(--sp-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-8);
+  padding: var(--sp-8) var(--sp-10);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.consult-cta-text { flex: 1; }
+
+.consult-cta-label {
+  font-size: 1.0625rem;
+  font-weight: var(--font-weight-semi);
+  color: var(--color-text-primary);
+  margin-bottom: var(--sp-2);
+}
+
+.consult-cta-sub {
+  font-size: 0.9375rem;
+  color: var(--color-text-tertiary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.consult-cta-btn {
+  flex-shrink: 0;
+  width: auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .consult-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--sp-6);
+  }
+  .consult-cta-btn { width: 100%; justify-content: center; }
+}
+
+
+/* =============================================================
+   13. FOUNDER VIDEO SECTION
    ============================================================= */
 .section-video {
   background-color: var(--color-bg);
@@ -1181,7 +1291,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background-color: var(--color-accent);   /* deep navy for placeholder */
+  background-color: #2A2420;   /* dark warm near-black for video placeholder */
   box-shadow: var(--shadow-lg);
 }
 
@@ -1265,7 +1375,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 
 .contact-form-wrap {
   background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 1.5px solid var(--color-text-primary);
   border-radius: var(--radius-xl);
   padding: var(--sp-10);
   box-shadow: var(--shadow-sm);
@@ -1527,9 +1637,9 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
    15. FOOTER
    ============================================================= */
 .footer {
-  border-top: 1px solid var(--color-border-light);
-  padding: var(--sp-12) 0 var(--sp-10);
-  background-color: var(--color-bg);
+  border-top: none;
+  padding: var(--sp-8) 0 var(--sp-6);
+  background-color: #1A1714;
 }
 
 .footer-inner {
@@ -1537,7 +1647,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   align-items: center;
   justify-content: space-between;
   gap: var(--sp-8);
-  margin-bottom: var(--sp-8);
+  margin-bottom: var(--sp-5);
 }
 
 .footer-left {
@@ -1550,12 +1660,12 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   font-size: 1rem;
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.02em;
-  color: var(--color-accent);    /* logo in deep navy */
+  color: var(--color-accent);
 }
 
 .footer-tagline {
   font-size: 0.875rem;
-  color: var(--color-text-secondary);
+  color: rgba(255,255,255,0.45);
 }
 
 .footer-link {
@@ -1571,10 +1681,10 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 
 .footer-bottom {
   padding-top: var(--sp-6);
-  border-top: 1px solid var(--color-border-light);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-.footer-copy { font-size: 0.8125rem; color: var(--color-text-tertiary); }
+.footer-copy { font-size: 0.8125rem; color: rgba(255,255,255,0.28); }
 
 
 /* =============================================================
@@ -1603,7 +1713,6 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   :root { --container-pad: var(--sp-6); }
 
   .nav-links  { display: none; }
-  .nav-toggle { display: flex; }
 
   .tab-panel { grid-template-columns: 1fr; }
   .tab-visual { max-width: 480px; margin: 0 auto; }
@@ -1634,6 +1743,7 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
     justify-content: flex-start;
     margin-left: 0;
     margin-right: 0;
+    overflow-x: auto;
   }
 }
 
@@ -1644,14 +1754,118 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
 @media (max-width: 600px) {
   :root { --container-pad: var(--sp-5); }
 
-  .section { padding: var(--sp-16) 0; }
-  .section-hero { padding-top: calc(var(--sp-16) + var(--sp-6)); }
+  .section { padding: var(--sp-12) 0; }
+  .section-hero { padding-top: var(--sp-12); }
 
   .hero-chips { gap: var(--sp-2); }
   .hero-chip  { min-width: 130px; flex: 1; }
 
-  .tabs { flex-direction: column; width: 100%; border-radius: var(--radius-lg); }
-  .tab-btn { width: 100%; text-align: center; border-radius: var(--radius-md); }
+  /* Tabs: compact horizontal strip — all three visible at once */
+  .tabs {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    border-radius: var(--radius-pill);
+    flex-wrap: nowrap;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 0.8125rem;
+    padding: var(--sp-2) var(--sp-3);
+  }
+
+  /* ── Mobile carousel ──────────────────────────────────────── */
+  .tab-content {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .tab-track {
+    display: flex;
+    width: 100%;                /* track fills container exactly */
+    will-change: transform;
+    transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Each panel is exactly the container width — JS reinforces with px */
+  .tab-panel,
+  .tab-panel[hidden] {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;      /* override desktop align-items:center — CRITICAL */
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    box-sizing: border-box;
+  }
+
+  /* Description: only h3 + 1 short line on mobile */
+  .tab-body {
+    order: 1;
+    width: 100%;
+    min-width: 0;
+  }
+  .tab-desc-mobile {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-top: var(--sp-2);
+    margin-bottom: var(--sp-4);
+  }
+
+  .tab-visual {
+    order: 2;
+    width: 100%;
+    min-width: 0;
+    margin-top: var(--sp-3);
+    overflow: hidden;
+    max-height: 320px;
+    border-radius: var(--radius-md);
+  }
+
+  /* Hide long description paragraph on mobile — h3 + list is enough */
+  .tab-body > p { display: none; }
+
+  /* Tighter feature list on mobile */
+  .feature-list { gap: var(--sp-2); }
+  .feature-list li { font-size: 0.875rem; }
+
+  /* Tighter tab-body spacing */
+  .tab-body h3 { font-size: 1.125rem; margin-bottom: var(--sp-3); }
+
+  /* Dot indicators */
+  .tab-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--sp-2);
+    margin-top: var(--sp-5);
+  }
+  .tab-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--color-border);
+    transition: background-color var(--transition-base), transform var(--transition-base);
+    cursor: pointer;
+  }
+  .tab-dot.active {
+    background-color: var(--color-accent);
+    transform: scale(1.25);
+  }
 
   .packages-grid { grid-template-columns: 1fr; }
 
@@ -1660,4 +1874,70 @@ p  { color: var(--color-text-secondary); line-height: 1.7; }
   .contact-form-wrap { padding: var(--sp-6); border-radius: var(--radius-lg); }
 
   .footer-inner { flex-direction: column; align-items: flex-start; gap: var(--sp-6); }
+}
+
+
+/* =============================================================
+   19. DARK MODE
+   Claude-inspired dark palette — warm near-black, not cold gray.
+   Triggers automatically via OS preference.
+   ============================================================= */
+/* Dark mode variable block — shared between OS preference and manual toggle */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --color-bg:             #1A1917;
+    --color-surface:        #242220;
+    --color-surface-alt:    #1E1C1A;
+    --color-text-primary:   #F0EDE8;
+    --color-text-secondary: #C4B9B0;   /* lighter — readable body text on dark bg */
+    --color-text-tertiary:  #8A7E76;   /* medium — supporting/meta on dark bg */
+    --color-border:         #2E2B28;
+    --color-border-light:   #282420;
+    --color-accent:         #E08060;
+    --color-accent-hover:   #CC6E50;
+    --color-accent-mid:     #C87858;
+    --color-accent-light:   #2C1E18;
+    --color-accent-text:    #F0C4AE;
+    --shadow-sm:  0 1px 4px rgba(0,0,0,0.30), 0 1px 2px rgba(0,0,0,0.20);
+    --shadow-md:  0 4px 14px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.20);
+    --shadow-lg:  0 8px 32px rgba(0,0,0,0.40), 0 4px 8px rgba(0,0,0,0.20);
+    --shadow-xl:  0 16px 48px rgba(0,0,0,0.45), 0 8px 16px rgba(0,0,0,0.25);
+  }
+  html:not([data-theme="light"]) .nav {
+    background-color: rgba(26, 25, 23, 0.88);
+  }
+  html:not([data-theme="light"]) .section-hero {
+    background:
+      radial-gradient(ellipse 70% 40% at 50% 0%, rgba(218,119,86,0.08) 0%, transparent 65%),
+      var(--color-bg);
+  }
+}
+
+/* Manual dark mode toggle */
+[data-theme="dark"] {
+  --color-bg:             #1A1917;
+  --color-surface:        #242220;
+  --color-surface-alt:    #1E1C1A;
+  --color-text-primary:   #F0EDE8;
+  --color-text-secondary: #C4B9B0;
+  --color-text-tertiary:  #8A7E76;
+  --color-border:         #2E2B28;
+  --color-border-light:   #282420;
+  --color-accent:         #E08060;
+  --color-accent-hover:   #CC6E50;
+  --color-accent-mid:     #C87858;
+  --color-accent-light:   #2C1E18;
+  --color-accent-text:    #F0C4AE;
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.30), 0 1px 2px rgba(0,0,0,0.20);
+  --shadow-md:  0 4px 14px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.20);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.40), 0 4px 8px rgba(0,0,0,0.20);
+  --shadow-xl:  0 16px 48px rgba(0,0,0,0.45), 0 8px 16px rgba(0,0,0,0.25);
+}
+[data-theme="dark"] .nav {
+  background-color: rgba(26, 25, 23, 0.88);
+}
+[data-theme="dark"] .section-hero {
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(218,119,86,0.08) 0%, transparent 65%),
+    var(--color-bg);
 }

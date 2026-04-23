@@ -27,21 +27,29 @@
         <a href="#features" class="nav-link">What's Included</a>
         <a href="#packages" class="nav-link">Packages</a>
         <a href="#faq" class="nav-link">FAQ</a>
-        <a href="#contact" class="nav-cta">Get Started</a>
       </div>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-    </div>
-
-    <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
-      <a href="#features" class="nav-mobile-link">What's Included</a>
-      <a href="#packages" class="nav-mobile-link">Packages</a>
-      <a href="#faq" class="nav-mobile-link">FAQ</a>
-      <a href="#contact" class="nav-mobile-link nav-mobile-cta">Get Started</a>
+      <div class="nav-right">
+        <button class="nav-theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <!-- Moon: shown in light mode -->
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <!-- Sun: shown in dark mode -->
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <a href="#contact" class="nav-cta">Get Started</a>
+      </div>
     </div>
   </nav>
 
@@ -115,7 +123,7 @@
           aria-controls="tab-panel-resume"
           id="tab-btn-resume"
           data-target="tab-panel-resume"
-        >Resume Setup</button>
+        >Resume</button>
         <button
           class="tab-btn"
           role="tab"
@@ -123,7 +131,7 @@
           aria-controls="tab-panel-collateral"
           id="tab-btn-collateral"
           data-target="tab-panel-collateral"
-        >Application Collateral</button>
+        >Collateral</button>
         <button
           class="tab-btn"
           role="tab"
@@ -131,10 +139,11 @@
           aria-controls="tab-panel-profiles"
           id="tab-btn-profiles"
           data-target="tab-panel-profiles"
-        >Profile &amp; Job Board Setup</button>
+        >Profiles</button>
       </div>
 
       <div class="tab-content reveal reveal-delay-2">
+        <div class="tab-track">
 
         <!-- ── RESUME SETUP ─────────────────────────────────────── -->
         <div class="tab-panel active" id="tab-panel-resume" role="tabpanel" aria-labelledby="tab-btn-resume">
@@ -153,11 +162,11 @@
                   <div class="mock-r-name">Alex Morgan</div>
                   <div class="mock-r-title">Senior Product Manager</div>
                   <div class="mock-r-contact-row">
-                    <span class="mock-r-contact-item"></span>
+                    <span class="mock-r-contact-item">San Francisco, CA</span>
                     <span class="mock-r-contact-sep">·</span>
-                    <span class="mock-r-contact-item mock-r-contact-wide"></span>
+                    <span class="mock-r-contact-item">alex.morgan@email.com</span>
                     <span class="mock-r-contact-sep">·</span>
-                    <span class="mock-r-contact-item"></span>
+                    <span class="mock-r-contact-item">LinkedIn</span>
                   </div>
                 </div>
 
@@ -169,25 +178,25 @@
 
                   <!-- Job entry 1 -->
                   <div class="mock-job-row">
-                    <div class="mock-job-title"></div>
-                    <div class="mock-job-date"></div>
+                    <div class="mock-job-title">Senior Product Manager</div>
+                    <div class="mock-job-date">2021–Present</div>
                   </div>
-                  <div class="mock-job-company"></div>
+                  <div class="mock-job-company">Horizon Tech · San Francisco, CA</div>
                   <div class="mock-bullets">
-                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-line" style="width:90%"></div></div>
-                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-line" style="width:82%"></div></div>
-                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-line" style="width:87%"></div></div>
+                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-text-line">Led cross-functional launch of 3 core features, driving 28% revenue growth in Q2</div></div>
+                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-text-line">Reduced customer churn 18% by redesigning onboarding flow based on user research</div></div>
+                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-text-line">Managed roadmap for 5 engineering squads using Agile; shipped 94% of planned features on time</div></div>
                   </div>
 
                   <!-- Job entry 2 -->
                   <div class="mock-job-row" style="margin-top:10px">
-                    <div class="mock-job-title" style="width:52%"></div>
-                    <div class="mock-job-date"></div>
+                    <div class="mock-job-title">Product Manager</div>
+                    <div class="mock-job-date">2018–2021</div>
                   </div>
-                  <div class="mock-job-company" style="width:40%"></div>
+                  <div class="mock-job-company">Vela Systems · Remote</div>
                   <div class="mock-bullets">
-                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-line" style="width:85%"></div></div>
-                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-line" style="width:72%"></div></div>
+                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-text-line">Owned 0→1 product build for B2B analytics dashboard; reached 200+ enterprise clients</div></div>
+                    <div class="mock-bullet-row"><span class="mock-bullet-dot"></span><div class="mock-text-line">Defined OKRs and sprint cadence; improved team velocity by 35% over 6 months</div></div>
                   </div>
                 </div>
 
@@ -197,10 +206,10 @@
                 <div class="mock-section">
                   <div class="mock-section-label">EDUCATION</div>
                   <div class="mock-job-row">
-                    <div class="mock-job-title" style="width:58%"></div>
-                    <div class="mock-job-date"></div>
+                    <div class="mock-job-title">B.S. Business Administration</div>
+                    <div class="mock-job-date">2014–2018</div>
                   </div>
-                  <div class="mock-line" style="width:45%; margin-top:4px"></div>
+                  <div class="mock-line" style="width:45%; margin-top:4px">UC Berkeley, Haas</div>
                 </div>
 
                 <div class="mock-divider"></div>
@@ -224,6 +233,7 @@
 
           <div class="tab-body">
             <h3>Resumes that are ready to deploy</h3>
+            <p class="tab-desc-mobile">ATS-ready, tailored to your roles — clean format, multiple versions, PDF and editable.</p>
             <p>
               Your resume gets cleaned up, properly formatted, and tailored to
               your target roles. Whether you're starting from scratch or
@@ -261,21 +271,15 @@
                     <span class="mock-doc-card-dot"></span>
                     Cover Letter Template
                   </div>
-                  <div class="mock-doc-name"></div>
-                  <div class="mock-doc-contact-line"></div>
+                  <div class="mock-doc-name">Alex Morgan</div>
+                  <div class="mock-doc-contact-line">alex.morgan@email.com · (415) 555-0198</div>
                   <div class="mock-doc-sep"></div>
-                  <div class="mock-doc-greeting"></div>
+                  <div class="mock-doc-greeting">Dear Hiring Manager,</div>
                   <div class="mock-doc-body">
-                    <div class="mock-line" style="width:100%"></div>
-                    <div class="mock-line" style="width:96%"></div>
-                    <div class="mock-line" style="width:90%"></div>
-                    <div class="mock-line" style="width:98%"></div>
-                    <div class="mock-line" style="width:46%"></div>
+                    <div class="mock-text-line">I'm excited to apply for the Senior PM role. With 6+ years at high-growth startups, I have a track record of shipping features that drive real outcomes — 28% ARR growth, 18% churn reduction.</div>
                   </div>
-                  <div class="mock-doc-body" style="margin-top:10px">
-                    <div class="mock-line" style="width:100%"></div>
-                    <div class="mock-line" style="width:84%"></div>
-                    <div class="mock-line" style="width:38%"></div>
+                  <div class="mock-doc-body" style="margin-top:6px">
+                    <div class="mock-text-line">I thrive in cross-functional environments and excel at turning ambiguous problems into clear roadmaps. I'd love to bring this to your team.</div>
                   </div>
                   <div class="mock-doc-signoff">
                     <div class="mock-line" style="width:48px"></div>
@@ -291,19 +295,19 @@
                   </div>
                   <!-- Three reference entries -->
                   <div class="mock-ref-entry">
-                    <div class="mock-ref-name"></div>
-                    <div class="mock-line" style="width:70%; height:8px; margin-top:4px"></div>
-                    <div class="mock-line" style="width:55%; height:8px; margin-top:3px"></div>
+                    <div class="mock-ref-name">Jordan Lee</div>
+                    <div class="mock-line" style="width:70%; height:8px; margin-top:4px">Director of Product, Horizon Tech</div>
+                    <div class="mock-line" style="width:55%; height:8px; margin-top:3px">j.lee@horizontech.com</div>
                   </div>
                   <div class="mock-ref-entry">
-                    <div class="mock-ref-name" style="width:52%"></div>
-                    <div class="mock-line" style="width:65%; height:8px; margin-top:4px"></div>
-                    <div class="mock-line" style="width:48%; height:8px; margin-top:3px"></div>
+                    <div class="mock-ref-name" style="width:52%">Priya Nair</div>
+                    <div class="mock-line" style="width:65%; height:8px; margin-top:4px">VP Engineering, Vela Systems</div>
+                    <div class="mock-line" style="width:48%; height:8px; margin-top:3px">p.nair@velasys.com</div>
                   </div>
                   <div class="mock-ref-entry" style="margin-bottom:0">
-                    <div class="mock-ref-name" style="width:62%"></div>
-                    <div class="mock-line" style="width:60%; height:8px; margin-top:4px"></div>
-                    <div class="mock-line" style="width:44%; height:8px; margin-top:3px"></div>
+                    <div class="mock-ref-name">Marcus Chen</div>
+                    <div class="mock-text-line" style="margin-top:3px">Head of Design, Vela Systems</div>
+                    <div class="mock-text-line">m.chen@velasys.com</div>
                   </div>
                 </div><!-- /references -->
 
@@ -313,6 +317,7 @@
 
           <div class="tab-body">
             <h3>Templates for every application</h3>
+            <p class="tab-desc-mobile">Cover letter template and references doc — polished, reusable, customizable per role.</p>
             <p>
               A polished cover letter template and professional references
               document means you can move quickly without starting from scratch
@@ -346,9 +351,9 @@
                 <div class="mock-profile-header">
                   <div class="mock-avatar mock-avatar-lg"></div>
                   <div class="mock-header-lines">
-                    <div class="mock-line mock-name-line"></div>
-                    <div class="mock-line mock-title-line"></div>
-                    <div class="mock-line mock-contact-line"></div>
+                    <div class="mock-r-name" style="font-size:0.75rem">Alex Morgan</div>
+                    <div class="mock-r-title">Senior Product Manager · San Francisco, CA</div>
+                    <div class="mock-r-title" style="margin-top:2px;color:var(--color-accent)">Open to new opportunities</div>
                   </div>
                   <div class="mock-profile-status">
                     <span class="mock-status-dot"></span>
@@ -414,6 +419,7 @@
 
           <div class="tab-body">
             <h3>Profiles set up and job alerts running</h3>
+            <p class="tab-desc-mobile">LinkedIn optimized, job boards configured, alerts active — jobs come to you.</p>
             <p>
               We optimize your LinkedIn profile and configure your presence on
               the key job boards — with settings tuned, accurate information
@@ -430,13 +436,77 @@
           </div>
         </div><!-- /profiles -->
 
+        </div><!-- /tab-track -->
+
+        <!-- Dot indicators — visible on mobile only (CSS controls display) -->
+        <div class="tab-dots" aria-hidden="true">
+          <span class="tab-dot active" data-index="0"></span>
+          <span class="tab-dot" data-index="1"></span>
+          <span class="tab-dot" data-index="2"></span>
+        </div>
+
       </div><!-- /tab-content -->
     </div><!-- /container -->
   </section>
 
 
   <!-- ============================================================
-       PACKAGES / PRICING  — unchanged layout
+       PROCESS
+       ============================================================ -->
+  <section class="section section-process" id="process">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2>Simple from start to finish</h2>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="process-num">01</div>
+          <div class="process-content">
+            <h3>Fill out the intake form</h3>
+            <p>
+              Share your current materials, target roles, locations, and any
+              restrictions or notes. Takes about two minutes.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-connector" aria-hidden="true"></div>
+
+        <div class="process-step reveal reveal-delay-1">
+          <div class="process-num">02</div>
+          <div class="process-content">
+            <h3>We build your setup</h3>
+            <p>
+              Based on your intake, we work on your resume, profiles, templates,
+              and job board configuration. We follow up if anything needs
+              clarification.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-connector" aria-hidden="true"></div>
+
+        <div class="process-step reveal reveal-delay-2">
+          <div class="process-num">03</div>
+          <div class="process-content">
+            <h3>Start applying with a cleaner system</h3>
+            <p>
+              You receive your complete setup — organized, polished, and ready
+              to use. Everything in one place, ready to go.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PACKAGES / PRICING
        ============================================================ -->
   <section class="section section-packages" id="packages">
     <div class="container">
@@ -555,59 +625,14 @@
         </div>
 
       </div>
-    </div>
-  </section>
 
-
-  <!-- ============================================================
-       PROCESS — unchanged
-       ============================================================ -->
-  <section class="section section-process" id="process">
-    <div class="container">
-
-      <div class="section-header reveal">
-        <span class="eyebrow">How It Works</span>
-        <h2>Simple from start to finish</h2>
-      </div>
-
-      <div class="process-steps">
-        <div class="process-step reveal">
-          <div class="process-num">01</div>
-          <div class="process-content">
-            <h3>Fill out the intake form</h3>
-            <p>
-              Share your current materials, target roles, locations, and any
-              restrictions or notes. Takes about two minutes.
-            </p>
-          </div>
+      <!-- Consult soft CTA — inside packages, no dead space -->
+      <div class="consult-cta-inner reveal">
+        <div class="consult-cta-text">
+          <p class="consult-cta-label">Not sure which package fits?</p>
+          <p class="consult-cta-sub">Book a 30-minute one-on-one session. We'll review what you have, talk through your search, and map out a clear plan — no commitment required.</p>
         </div>
-
-        <div class="process-connector" aria-hidden="true"></div>
-
-        <div class="process-step reveal reveal-delay-1">
-          <div class="process-num">02</div>
-          <div class="process-content">
-            <h3>We build your setup</h3>
-            <p>
-              Based on your intake, we work on your resume, profiles, templates,
-              and job board configuration. We follow up if anything needs
-              clarification.
-            </p>
-          </div>
-        </div>
-
-        <div class="process-connector" aria-hidden="true"></div>
-
-        <div class="process-step reveal reveal-delay-2">
-          <div class="process-num">03</div>
-          <div class="process-content">
-            <h3>Start applying with a cleaner system</h3>
-            <p>
-              You receive your complete setup — organized, polished, and ready
-              to use. Everything in one place, ready to go.
-            </p>
-          </div>
-        </div>
+        <a href="#contact" class="btn btn-outline consult-cta-btn" data-package="Consult">Book a $49 Consult</a>
       </div>
 
     </div>
@@ -1021,6 +1046,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating pill nav — mobile only -->
+  <nav class="pill-nav" aria-label="Quick navigation">
+    <a href="#features" class="pill-nav-link">Included</a>
+    <a href="#packages" class="pill-nav-link">Packages</a>
+    <a href="#faq" class="pill-nav-link">FAQ</a>
+    <a href="#contact" class="pill-nav-cta">Get Started</a>
+  </nav>
 
   <script src="js/main.js"></script>
 </body>

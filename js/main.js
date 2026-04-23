@@ -29,6 +29,7 @@ function init() {
   initSmoothScroll();
   initPackageButtons();
   initSubmitSuccess();
+  initDarkModeToggle();
 }
 
 
@@ -93,55 +94,112 @@ function initNav() {
 
 /* =============================================================
    2. TABBED FEATURE SHOWCASE
-   Switches between Resume, Collateral, and Profiles panels.
-   Handles aria attributes for accessibility.
+   Desktop: shows/hides panels with a fade-up animation.
+   Mobile (≤600px): horizontal carousel with touch swipe support.
    ============================================================= */
 function initTabs() {
   const tabButtons = document.querySelectorAll('.tab-btn');
   const tabPanels  = document.querySelectorAll('.tab-panel');
+  const track      = document.querySelector('.tab-track');
+  const dots       = document.querySelectorAll('.tab-dot');
 
   if (!tabButtons.length) return;
 
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      if (!targetId) return;
+  const MOBILE_BP = 600;
 
-      // Deactivate all tabs
-      tabButtons.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-      });
+  function isMobile() { return window.innerWidth <= MOBILE_BP; }
 
-      // Hide all panels
+  /* ── Set panel widths to container px (carousel fix) ──────── */
+  function syncPanelWidths() {
+    if (!track) return;
+    const w = track.parentElement.offsetWidth;
+    tabPanels.forEach(p => { p.style.width = w + 'px'; });
+  }
+
+  /* ── Activate a tab by index ─────────────────────────────── */
+  function activateTab(index) {
+    const btn         = tabButtons[index];
+    const targetId    = btn ? btn.getAttribute('data-target') : null;
+    const targetPanel = targetId ? document.getElementById(targetId) : null;
+
+    // Update button states
+    tabButtons.forEach((b, i) => {
+      b.classList.toggle('active', i === index);
+      b.setAttribute('aria-selected', String(i === index));
+    });
+
+    // Update dot indicators
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+
+    if (isMobile() && track) {
+      // ── Mobile: slide the track using pixel widths ──────────
+      tabPanels.forEach(p => { p.hidden = false; });
+      syncPanelWidths();
+      const panelPx = track.parentElement.offsetWidth;
+      track.style.transform = `translateX(-${index * panelPx}px)`;
+    } else {
+      // ── Desktop: hide/show with fade-up animation ───────────
       tabPanels.forEach(panel => {
         panel.classList.remove('active');
         panel.hidden = true;
       });
-
-      // Activate clicked tab
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-
-      // Show target panel
-      const targetPanel = document.getElementById(targetId);
       if (targetPanel) {
         targetPanel.classList.add('active');
         targetPanel.hidden = false;
-
-        // Subtle entrance animation: reset opacity and re-trigger
-        targetPanel.style.opacity = '0';
+        targetPanel.style.opacity   = '0';
         targetPanel.style.transform = 'translateY(8px)';
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             targetPanel.style.transition = 'opacity 300ms ease, transform 300ms ease';
-            targetPanel.style.opacity   = '1';
-            targetPanel.style.transform = 'translateY(0)';
+            targetPanel.style.opacity    = '1';
+            targetPanel.style.transform  = 'translateY(0)';
           });
         });
       }
-    });
+    }
+  }
+
+  /* ── Button clicks ───────────────────────────────────────── */
+  tabButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => activateTab(index));
   });
+
+  /* ── Dot clicks ──────────────────────────────────────────── */
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => activateTab(index));
+  });
+
+  /* ── Touch swipe (mobile only) ───────────────────────────── */
+  if (track) {
+    let touchStartX = 0;
+    let currentIndex = 0;
+
+    function getCurrentIndex() {
+      return [...tabButtons].findIndex(b => b.classList.contains('active'));
+    }
+
+    track.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', e => {
+      if (!isMobile()) return;
+      const dx    = e.changedTouches[0].clientX - touchStartX;
+      const total = tabButtons.length;
+      const idx   = getCurrentIndex();
+      if (dx < -40 && idx < total - 1) activateTab(idx + 1);
+      if (dx >  40 && idx > 0)         activateTab(idx - 1);
+    }, { passive: true });
+  }
+
+  /* ── On resize: re-sync widths and active position ─────────── */
+  window.addEventListener('resize', () => {
+    const idx = [...tabButtons].findIndex(b => b.classList.contains('active'));
+    activateTab(idx >= 0 ? idx : 0);
+  }, { passive: true });
+
+  // Initial sync on load
+  syncPanelWidths();
 }
 
 
@@ -227,9 +285,25 @@ function initReveal() {
    Gateway, or a similar endpoint.
    Replace the submitForm function body with your fetch() call.
    ============================================================= */
+/*
+ * STRIPE PAYMENT LINKS
+ * After the intake form is submitted, Formsubmit emails you the details
+ * and redirects the user straight to the Stripe payment page for their
+ * selected package. Replace each placeholder URL with your real Stripe
+ * Payment Link from https://dashboard.stripe.com/payment-links
+ */
+const STRIPE_LINKS = {
+  light:    'https://buy.stripe.com/REPLACE_LIGHT_LINK',
+  full:     'https://buy.stripe.com/REPLACE_FULL_LINK',
+  ultimate: 'https://buy.stripe.com/REPLACE_ULTIMATE_LINK',
+  consult:  'https://buy.stripe.com/REPLACE_CONSULT_LINK',
+};
+
 function initForm() {
-  const form      = document.getElementById('intake-form');
-  const submitBtn = document.getElementById('form-submit-btn');
+  const form          = document.getElementById('intake-form');
+  const submitBtn     = document.getElementById('form-submit-btn');
+  const packageSelect = document.getElementById('f-package');
+  const nextInput     = form ? form.querySelector('[name="_next"]') : null;
 
   if (!form) return;
 
@@ -256,6 +330,13 @@ function initForm() {
         firstError.previousElementSibling?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
       return;
+    }
+
+    // Point _next at the Stripe Payment Link for the selected package.
+    // Formsubmit will email you the intake data then redirect the user to pay.
+    if (nextInput && packageSelect) {
+      const stripeUrl = STRIPE_LINKS[packageSelect.value];
+      if (stripeUrl) nextInput.value = stripeUrl;
     }
 
     // Show loading state — form submits natively to Formsubmit (supports file uploads)
@@ -413,5 +494,41 @@ function initPackageButtons() {
       }
       // Smooth scroll is handled by initSmoothScroll via the href="#contact"
     });
+  });
+}
+
+
+/* =============================================================
+   9. DARK MODE TOGGLE
+   Manual toggle stores preference in localStorage.
+   Works alongside OS-level prefers-color-scheme.
+   ============================================================= */
+function initDarkModeToggle() {
+  const toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+
+  const html = document.documentElement;
+
+  // Apply stored preference on load (before paint if possible)
+  const stored = localStorage.getItem('theme');
+  if (stored === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+  } else if (stored === 'light') {
+    html.setAttribute('data-theme', 'light');
+  }
+
+  toggle.addEventListener('click', () => {
+    const isDark = html.getAttribute('data-theme') === 'dark'
+      || (!html.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+    if (isDark) {
+      html.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+      toggle.setAttribute('aria-label', 'Switch to dark mode');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      toggle.setAttribute('aria-label', 'Switch to light mode');
+    }
   });
 }
